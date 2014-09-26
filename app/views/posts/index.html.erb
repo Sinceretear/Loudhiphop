@@ -1,0 +1,234 @@
+
+
+<header id="header" class="fixed-header">
+
+			<div class="container full-width-container">
+
+				<a class="brand-logo" href="/"><img src="http://www.i.imgur.com/50sILPi.png" alt="Audiomack Logo"/></a>
+
+
+				<nav class="main-nav">
+
+					<ul>
+						<li><a href="/">Home</a></li>
+
+						<li><a href="/songs/week">Top Songs</a></li>
+
+						<li><a href="/albums/week">Top Albums</a></li>
+
+						<li><a href="/playlists/week">Top Playlists</a></li>
+
+						<li><a href="/trending">Trending</a></li>
+
+                        <li><a href="/trending">News</a></li>
+
+                        <li><a href="/trending">Shop</a></li>
+					</ul>
+
+				</nav><!--/.main-nav-->
+
+			
+
+				<form id="site-search" class="search-form" action="/search" method="get">
+
+					<input type="text" class="search" value="" placeholder="Search for artists, songs, albums!" name="q" />
+
+				</form><!--/#site-search-->
+
+
+												<nav id="login-menu">
+							<ul>
+							<li class="signup"><a href="/account/create">Signup</a></li>
+
+							<li class="login">
+								<a href="/account/login"><span class="glyphicon glyphicon-user"></span>Login</a>
+							</li>
+
+
+											</ul>
+				</nav><!--/#user-menu-->
+
+			</div><!--/.full-width-container-->
+
+		</header>
+
+<div id="siteContainer">
+
+
+		<!-- THE FUCKING SLIDER CODE -->
+
+    <div id="slideshow-wrap">
+        <input type="radio" id="button-1" name="controls" checked="checked"/>
+        <label for="button-1"></label>
+        <input type="radio" id="button-2" name="controls"/>
+        <label for="button-2"></label>
+        <input type="radio" id="button-3" name="controls"/>
+        <label for="button-3"></label>
+        <input type="radio" id="button-4" name="controls"/>
+        <label for="button-4"></label>
+        <input type="radio" id="button-5" name="controls"/>
+        <label for="button-5"></label>
+        <label for="button-1" class="arrows" id="arrow-1">></label>
+        <label for="button-2" class="arrows" id="arrow-2">></label>
+        <label for="button-3" class="arrows" id="arrow-3">></label>
+        <label for="button-4" class="arrows" id="arrow-4">></label>
+        <label for="button-5" class="arrows" id="arrow-5">></label>
+        <div id="slideshow-inner">
+            <ul>
+                <li id="slide1">
+                    <img src="http://fevatv.com/wp-content/uploads/FevaTV-Drake.jpg" />
+                    <div class="description">
+                        <input type="checkbox" id="show-description-1"/>
+                        <label for="show-description-1" class="show-description-label">I</label>
+                        <div class="description-text">
+                            <h2>Flower power</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        </div>
+                    </div>
+                </li>
+                <li id="slide2">
+                    <img src="http://cssdeck.com/uploads/media/items/4/40Ly3VB.jpg" />
+                    <div class="description">
+                        <input type="checkbox" id="show-description-2"/>
+                        <label for="show-description-2" class="show-description-label">I</label>
+                        <div class="description-text">
+                            <h2>Golden sunset</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        </div>
+                    </div>
+                </li>
+                <li id="slide3">
+                    <img src="http://cssdeck.com/uploads/media/items/0/00kih8g.jpg" />
+                    <div class="description">
+                        <input type="checkbox" id="show-description-3"/>
+                        <label for="show-description-3" class="show-description-label">I</label>
+                        <div class="description-text">
+                            <h2>Flower power again</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        </div>
+                    </div>
+                </li>
+                <li id="slide4">
+                    <img src="http://cssdeck.com/uploads/media/items/2/2rT2vdx.jpg" />
+                    <div class="description">
+                        <input type="checkbox" id="show-description-4"/>
+                        <label for="show-description-4" class="show-description-label">I</label>
+                        <div class="description-text">
+                            <h2>Stormy coast</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        </div>
+                    </div>
+                </li>
+                <li id="slide5">
+                    <img src="http://cssdeck.com/uploads/media/items/8/8k3N3EL.jpg" />
+                    <div class="description">
+                        <input type="checkbox" id="show-description-5"/>
+                        <label for="show-description-5" class="show-description-label">I</label>
+                        <div class="description-text">
+                            <h2>Splash!</h2>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+ <!-- THE FUCKING SLIDER CODE -->  
+
+
+	<div class="alltheInfo">
+			
+			<% @posts.each do |post| %>
+				
+				<div class="infoContainer">
+
+
+					<div class="imageContainer">
+
+						<img src = "<%= post.images %>" width="100px" height="100px">
+
+					</div>
+					
+					<div class="postInfo">
+							
+                            <p><%= link_to post.title, post %></p>
+							<p><%= post.artist %></p>
+							<p>
+								<%= link_to "Edit", edit_post_path(post) %>
+								<%= link_to "Delete", post, :confirm => "u forreal?", :method => :delete %>
+							</p>
+                            
+					</div>
+				</div>
+
+
+               
+        <div class="collapsible">    
+            <h3 class="heading"> Youtube and other information </h3>
+                <div class="contents">
+                    <p>
+                        CONTENT HERE 
+                    </p> 
+                </div>
+
+
+            
+				<hr />
+			<% end %>
+
+			<p><%= link_to "add new post", new_post_path %></p>
+            <br />
+            <br />
+            <br />
+            
+
+	</div>
+
+</div>
+
+ <p><%= will_paginate @posts %></p>
+
+<br />
+<br />
+<br />
+
+
+<h2>Import Songs</h2>
+
+
+<%= form_tag import_posts_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+<% end %>
+
+<br />
+<br />
+<br />
+<br />
+
+<%= @deleteal %> 
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<%= @var %>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,5 +1,16 @@
 source 'https://rubygems.org'
 
+gem 'google-api-client', '>0.7'
+
+gem 'will_paginate'
+
+gem 'youtube_it'
+
+gem 'trollop'
+
+gem 'bootstrap-sass'
+
+gem 'youtube_search'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

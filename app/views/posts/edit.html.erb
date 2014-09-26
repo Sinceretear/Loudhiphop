@@ -1,0 +1,32 @@
+<div id="siteContainer">
+	edit.html.erb
+	<h1>edit post</h1>
+
+	<%= form_for @posts do |f| %>
+		
+		<% if @posts.errors.any? %>
+			<h2> Errors: </h2>
+			<ul>
+				<% @posts.errors.full_messages.each do |message| %>
+				<li><%= message %></li>	
+				<% end %>
+			</ul>
+		<% end %>
+
+		<p>
+			<%= f.label :title %><br />
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label :artist %><br />
+			<%= f.text_field :artist %>
+		</p>
+		<p>
+			<%= f.label :images %><br />
+			<%= f.text_field :images %>
+		</p>
+		<p>
+			<%= f.submit "update post" %>
+		</p>
+	<% end %>
+</div>

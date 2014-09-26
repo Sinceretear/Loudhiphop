@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
+
+  get 'search/index'
+
+  resources :posts do #creates set of routes index, show, new/create, edit/update, destroy
+    collection { post :import }
+  end 
   
+  root to: 'posts#index'
+
   get 'home/index'
 
   get 'home/trapmusic'
+
+  get 'search/main'
+ 
+  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
