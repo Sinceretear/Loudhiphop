@@ -1,3 +1,4 @@
+=begin
 #!/usr/bin/ruby
   require 'rubygems'
     gem 'google-api-client', '>0.7'
@@ -72,3 +73,4 @@
         end
       end 
 main 
+=end 
