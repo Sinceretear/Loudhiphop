@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  before_filter :authenticate_user!, except: [ :show, :index, :new ] 
+  before_filter :authenticate_user!, except: [ :show, :index, :new, :create ] 
 
   def index
   	@posts = Post.all 
