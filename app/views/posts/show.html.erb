@@ -1,12 +1,15 @@
-
+<div id="siteContainer">
+	
 <%= link_to "back", posts_path %>
 
 <%= @example %>
 <br />
 <br />
-<iframe width="1280" height="720" src="//www.youtube.com/embed/<%= @search_results %>" frameborder="0" allowfullscreen></iframe><br />
+<iframe width="1024" height="576" src="//www.youtube.com/embed/<%= @search_results %>" frameborder="0" allowfullscreen></iframe><br />
 <br />
 <br />
 <h1><%= @posts.title %></h1>
 <p><%= @posts.artist %></p>
 <small><%= @posts.created_at %></small>
+
+</div>

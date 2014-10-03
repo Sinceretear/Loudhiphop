@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  
+  before_filter :authenticate_user!, except: [ :show, :index, :new ] 
+
   def index
   	@posts = Post.all 
     @posts = Post.paginate(:page => params[:page], :per_page => 10,).order('created_at DESC')
@@ -67,7 +70,6 @@ class PostsController < ApplicationController
   def post_params
   	params.require(:post).permit(:title, :artist, :images)
   end 
-
 
 end
   

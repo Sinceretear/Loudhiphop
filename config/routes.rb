@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  devise_for :users
+  
   get 'search/index'
 
   resources :posts do #creates set of routes index, show, new/create, edit/update, destroy
@@ -13,6 +16,8 @@ Rails.application.routes.draw do
   get 'home/trapmusic'
 
   get 'search/main'
+
+  get 'search/playlist'
  
   
 

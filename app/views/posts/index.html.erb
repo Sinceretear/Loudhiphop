@@ -1,57 +1,5 @@
 
 
-<header id="header" class="fixed-header">
-
-			<div class="container full-width-container">
-
-				<a class="brand-logo" href="/"><img src="http://www.i.imgur.com/50sILPi.png" alt="Audiomack Logo"/></a>
-
-
-				<nav class="main-nav">
-
-					<ul>
-						<li><a href="/">Home</a></li>
-
-						<li><a href="/songs/week">Top Songs</a></li>
-
-						<li><a href="/albums/week">Top Albums</a></li>
-
-						<li><a href="/playlists/week">Top Playlists</a></li>
-
-						<li><a href="/trending">Trending</a></li>
-
-                        <li><a href="/trending">News</a></li>
-
-                        <li><a href="/trending">Shop</a></li>
-					</ul>
-
-				</nav><!--/.main-nav-->
-
-			
-
-				<form id="site-search" class="search-form" action="/search" method="get">
-
-					<input type="text" class="search" value="" placeholder="Search for artists, songs, albums!" name="q" />
-
-				</form><!--/#site-search-->
-
-
-												<nav id="login-menu">
-							<ul>
-							<li class="signup"><a href="/account/create">Signup</a></li>
-
-							<li class="login">
-								<a href="/account/login"><span class="glyphicon glyphicon-user"></span>Login</a>
-							</li>
-
-
-											</ul>
-				</nav><!--/#user-menu-->
-
-			</div><!--/.full-width-container-->
-
-		</header>
-
 <div id="siteContainer">
 
 
@@ -135,6 +83,11 @@
     </div>
 
  <!-- THE FUCKING SLIDER CODE -->  
+
+<p>THIS IS LOUDHIPHOP.COM</p>
+    <% if user_signed_in? %>
+        <p> Welcome <%= current_user.email %> </p>
+    <% end %>
 
 
 	<div class="alltheInfo">
