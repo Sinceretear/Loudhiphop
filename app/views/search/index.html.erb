@@ -1,32 +1,82 @@
 
 <br />
 <br />
-<div style="margin-left: 200px; margin-top: 200px">
-
+<div style="margin-left: 200px; margin-top: 25px">
 
 
 <%= link_to "Home", posts_path %><br/>
 
+	<br />
+		<br />
+		<br />
+		<br />
 
-<br />
-<br />
-<br />
-<br />
+		this page will basically scrape worldstar, audiomack, hotnewhiphop, datpiff, live mixtapes, and other hiphop sites for downloads and news....when I get around to it... 
 
-this page will basically scrape worldstar, audiomack, hotnewhiphop, datpiff, live mixtapes, and other hiphop sites for downloads and news....when I get around to it... 
+		<ul>
+			<li><%= link_to "WorldStar", 'http://www.worldstarhiphop.com/videos/' %></li>
+			<li><%= link_to "AudioMack", 'http://www.audiomack.com/' %></li>
+			<li><%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %></li>
+			<li><%= link_to "Datpiff", 'http://www.datpiff.com/' %></li>
+			<li><%= link_to "LiveMixtapes", 'http://www.livemixtapes.com/main.php' %></li>
+			<li><%= link_to "HipHopEarly", 'http://www.hiphopearly.com/' %></li>
+			<li><%= link_to "HowFlyHipHop", 'http://www.howflyhiphop.com/category/singles/' %></li>
+			<li><%= link_to "AudioCastle", 'http://www.audiocastle.net/' %></li>
+		</ul>
 
-<ul>
-	<li><%= link_to "WorldStar", 'http://www.worldstarhiphop.com/videos/' %></li>
-	<li><%= link_to "AudioMack", 'http://www.audiomack.com/' %></li>
-	<li><%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %></li>
-	<li><%= link_to "Datpiff", 'http://www.datpiff.com/' %></li>
-	<li><%= link_to "LiveMixtapes", 'http://www.livemixtapes.com/main.php' %></li>
-	<li><%= link_to "HipHopEarly", 'http://www.hiphopearly.com/' %></li>
-	<li><%= link_to "HowFlyHipHop", 'http://www.howflyhiphop.com/category/singles/' %></li>
-	<li><%= link_to "AudioCastle", 'http://www.audiocastle.net/' %></li>
-</ul>
-
+		<br />
+		<br />
+		<br /> 
 
 
+		
 
+
+
+</div>
+
+<div style="margin-left: 200px">
+	<div style="width: 600px; float: left">
+			<br />
+			<br />
+			<br /> 
+			<br />
+			<p>These are the audiomack links for today</p><br />
+			<%= @post_links.each do |x| %>
+			<p><%= x.text %> <a href='http://www.audiomack.com<%= x.attr('href') %>'><%= "link" %></a></p>
+			<% end %>
+
+
+			<br />
+			<br />
+			<br /> 
+			<br />
+			<p>Audiocastle links</p>
+			<%= @audiocastle.each do |f| %>
+			<p><%= f.text %><a href='<%= f.attr('href') %>'><%= "link" %></a></p>
+			<% end %>
+
+
+			<br />
+			<br />
+			<br /> 
+			<br />
+			<p>hiphopearly links </p>
+			<%= @hiphopearly.each do |m| %>
+			<p><%= m.text %><a href='http://www.hiphopearly.com/<%= m.attr('href') %>'><%= "link" %></a><br />
+			<% end %>
+ 
+
+
+	</div>
+	<div style="margin-left: 600px">
+			<br />
+			<br />
+			<br /> 
+			<br />
+			<p>These are the hnhh links for this week hnnh/archive</p><br />
+			<%= @hnhh_songs.each do |songs| %>
+			<p><%= songs.text %><a href='<%= songs.attr('href') %>'><%= "link" %></a></p>
+			<% end %>
+	</div>
 </div>

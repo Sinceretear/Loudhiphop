@@ -15,16 +15,3 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(document).ready(function(){  
-  
-    // hide all div containers  
-    $('.collapsible .contents').hide();  
-    // append click event to the a element  
-    $('.collapsible .heading').click(function() {  
-        // slide down the corresponding div if hidden, or slide up if shown  
-        $(this).next().slideToggle('medium');  
-        
-    });  
-});
-

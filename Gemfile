@@ -14,6 +14,9 @@ gem 'youtube_search'
 
 gem 'devise'
 
+gem 'mechanize'
+
+gem 'nokogiri'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
