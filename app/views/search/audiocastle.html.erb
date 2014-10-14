@@ -1,0 +1,21 @@
+
+
+<div id="siteContainer">
+	<div class="alltheInfo">
+		
+
+		<p>find away to get images on this page</p><br />
+		<p><%= link_to "AudioCastle", 'http://www.audiocastle.net/' %> links.</p><br />
+
+
+		
+			<% @audiocastle[34..53].each do |f| %>
+			<%= f.text.to_s %><br />
+			<%= link_to "AudioCastle Link", f.attr('href').to_s %><br />
+			<br />
+			<% end %>
+
+
+		
+	</div>
+</div>

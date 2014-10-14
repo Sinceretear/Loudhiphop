@@ -1,0 +1,32 @@
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+
+<p>reddit general hiphop news and links</p>
+<p>Currently streaming from http://www.reddit.com/r/trapmuzik/ - Links dont match images </p>
+<p>http://www.reddit.com/r/hiphopheads/ COMING SOON </p><br />
+
+
+
+<br />
+
+
+
+<% @tm_hash.each do |x, i| %>
+<div class="square">
+<a href="<%= i.attr('href').to_s %>"><img src="http://<%= x.attr('src')[2..100] %>"/></a><br />
+
+	<%= i.attr('href') %><br />
+	<%= i.text %><br />
+</div>
+<% end %>
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+</div>
+</div>

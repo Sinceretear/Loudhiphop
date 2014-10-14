@@ -1,0 +1,29 @@
+<div id="siteContainer">
+	<div class="alltheInfo" >
+		
+		<p>This is the AUDIOMACK NEWS for today - still need to fix link code</p>
+		<br />
+			<br />
+			<br />
+			<br />
+
+		<% @pit.each do |k, v| %>
+			<div class="square">
+				<a href="<%= k.attr('href').to_s %>"><img src="<%= v.attr('src').to_s %>"/></a>
+					<div class="inside-square">
+						<p><%= v.attr('alt').to_s %></p>
+					</div>
+			</div>
+		<% end %>
+
+	
+			<br />
+			<br />
+ 			<br />
+
+ 			
+	</div> 			
+</div>
+
+
+

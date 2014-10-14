@@ -1,0 +1,23 @@
+
+
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+		<p>These are the <%= link_to "AudioMack", 'http://www.audiomack.com/' %> links for today</p><br />
+		<!--
+		<p>remeber to add download buttons later.</p><br />
+		<p>Think about scraping the trending music also.</p><br />
+		-->
+	<% @jam.each do |x, i| %>
+	<div class="square2">
+	<a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a><br />
+	
+	<%= x.text %>
+	
+	</div>
+	<% end %>
+			
+
+
+	</div>
+</div>

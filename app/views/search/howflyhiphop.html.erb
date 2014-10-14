@@ -1,0 +1,28 @@
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+		<p>These are the <%= link_to "HowFlyHipHop", 'http://www.howflyhiphop.com/category/singles/' %> links for today</p><br />
+		<!--
+		<p>remeber to add download buttons later.</p><br />
+		<p>Think about scraping the other pages also.</p><br />
+		-->
+
+	<% @hfhh_hash.each do |x, i| %>
+	<div class="square3">
+	<a href="<%= x.attr('href') %>"><img src="<%= i.attr('src') %>" style="width: 275px; height: 275px"/></a><br />
+	<%= x.text %><br />
+	</div>
+	<% end %>
+
+	<% @hfhh_hash2.each do |x, i| %>
+	<div class="square3">
+	<a href="<%= x.attr('href') %>"><img src="<%= i.attr('src') %>" style="width: 275px; height: 275px"/></a><br />
+	<%= x.text %><br />
+	</div>
+	<% end %>
+			
+
+
+	</div>
+</div>
+

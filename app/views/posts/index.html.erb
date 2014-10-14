@@ -1,6 +1,6 @@
 <div id="siteContainer">
 
-
+<p>THIS IS LOUDHIPHOP.COM - CLICK THE SONG TO VIEW THE MUSIC VIDEO!</p>
 		<!-- THE FUCKING SLIDER CODE -->
 
     <div id="slideshow-wrap">
@@ -82,7 +82,7 @@
 
  <!-- THE FUCKING SLIDER CODE -->  
 
-<p>THIS IS LOUDHIPHOP.COM</p>
+
     <% if user_signed_in? %>
         <p> Welcome <%= current_user.email %> </p>
     <% end %>
@@ -120,54 +120,59 @@
             <br />
             <br />
             <br />
-            
 
-	</div>
+
+             <p><%= will_paginate @posts %></p>
+
+            <br />
+            <br />
+            <br />
+
+
+            <h2>Import Songs</h2>
+
+
+            <%= form_tag import_posts_path, multipart: true do %>
+                <%= file_field_tag :file %>
+                <%= submit_tag "Import" %>
+            <% end %>
+    </div>
+</div>
+
+
+<br />
+<br />
+
+<div style="margin-left: 200px; margin-top: 25px">
+
+
+<!--
+<p>add atrilli to the list multiple pages</p>
+<p>page of realease dates http://cantstophiphop.com/release-dates/ maybe find a comprable list</p>
+-->
+
 
 </div>
 
- <p><%= will_paginate @posts %></p>
+    <div style="margin-left: 200px">
+        <div style="width: 990px; float: left">
 
-<br />
-<br />
-<br />
+        <a href="/search/audiomack"><img src="http://i.imgur.com/nj3QqLr.jpg"/></a>
+        <a href="/search/hotnewhiphop"><img src="http://i.imgur.com/wK3Gkub.jpg"/></a>
+        <a href="/search/videos"><img src="http://i.imgur.com/c5daQLK.jpg"/></a>
 
-
-<h2>Import Songs</h2>
-
-
-<%= form_tag import_posts_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import" %>
-<% end %>
-
-<br />
-<br />
-<br />
-<br />
-
-<%= @deleteal %> 
+        <br />
+        <br />
 
 
-<br />
-<br />
-<br />
-<br />
-<br />
+        <a href="/search/audiocastle"><img src="http://i.imgur.com/5OL32Ff.jpg"/></a>
+        <a href="/search/hiphopearly"><img src="http://i.imgur.com/mBU8hkw.jpg"/></a>
+        <%= link_to(image_tag("http://i.imgur.com/RF3HOUC.jpg"), search_mixtapes_path) %>
+        <a href="/search/howflyhiphop"><img src="http://i.imgur.com/5n53gLF.jpg"/></a>
+        <a href="/search/worldstar"><img src="http://i.imgur.com/AuYMRm8.jpg"/></a>
+        <a href="/search/reddit"><img src="http://i.imgur.com/ikmHJyB.jpg"/></a>
 
-<%= @var %>
+        
+    </div>
+</div>
 
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
-
-
-<br />
-<br />
-<br />
-<br />
-<br />

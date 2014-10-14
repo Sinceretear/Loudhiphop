@@ -1,0 +1,35 @@
+
+
+
+
+
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+
+
+
+	<p><%= link_to "HipHopEarly", 'http://www.hiphopearly.com/' %> links </p>
+
+	<br />
+	<br />
+	<br />
+
+
+
+	<% @hhehash.each do |x, i| %>
+	<div class="square">
+	<a href="http://www.hiphopearly.com<%= x.attr('href').to_s %>"><img src="http://www.hiphopearly.com<%= i.attr('src').to_s %>"/></a><br />
+	<%= x.text %><br />
+	</div>
+	<% end %>
+
+
+		
+
+		
+	</div>
+</div>
+
+
+

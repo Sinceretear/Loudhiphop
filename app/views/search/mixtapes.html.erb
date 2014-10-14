@@ -1,0 +1,57 @@
+mixtapes.html.erb
+
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+<!--
+<p>add most views for last 30 days page off livemixtapes.</p>
+<p>Albums dont have artist names on datpiff links</p>
+-->
+
+<h1>MIXTAPES PAGE</h1>
+<p><a href="index">Home</a></p>
+
+<br />
+<br />
+
+<%= link_to "Datpiff", 'http://www.datpiff.com/' %><br />
+<%= link_to "LiveMixtapes", 'http://www.livemixtapes.com/main.php' %><br />
+
+<br />
+<br />
+<br />
+<br />
+
+<% @lm_hash.each do |x, i| %>
+<div class="square">
+<a href="http://www.livemixtapes.com<%= x.attr('href') %>"><img src="<%= i.attr('src') %>"/></a><br />
+<%= x.text %><br />
+</div>
+<% end %>
+
+<br />
+<br />
+<br />
+<br />
+
+<% @dp_hash.each do |x, i| %>
+<div class="square">
+<a href="http://www.datpiff.com<%= x.attr('href') %>"><img src="<%= i.attr('src') %>"/></a><br />
+<%= x.text %><br />
+</div>
+<% end %>
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+<br />
+
+			
+
+
+</div>
+</div>

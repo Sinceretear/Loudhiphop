@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all 
-    @posts = Post.paginate(:page => params[:page], :per_page => 10,).order('created_at DESC')
+    @posts = Post.paginate(:page => params[:page], :per_page => 6,).order('created_at DESC')
 
     #require 'youtube_search'
     #@var = 'posed to be in love'

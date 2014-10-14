@@ -15,10 +15,27 @@ Rails.application.routes.draw do
 
   get 'home/trapmusic'
 
+  get 'search/mixtapes'
+
   get 'search/main'
 
-  get 'search/playlist'
+  get 'search/news'
+
+  get 'search/audiomack'
+
+  get 'search/hiphopearly'
+  
+  get 'search/hotnewhiphop'
+  
+  get 'search/audiocastle'
  
+  get 'search/videos'
+
+  get 'search/howflyhiphop'
+
+  get 'search/worldstar'
+
+  get 'search/reddit'
   
 
 

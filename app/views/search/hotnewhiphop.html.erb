@@ -1,0 +1,21 @@
+
+
+<div id="siteContainer">
+	<div class="alltheInfo">
+
+		<p>These are the <%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %> links for this week hnnh/archive</p><br />
+		<p>This page needs low quality pics fixed later</p><br />
+		
+		<br />
+		<br />
+
+		<% @hnhh_hash.each do |x, i| %>
+		<div class="square">
+		<a href="<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>" style="width: 70px; height: 70px;"/></a><br />
+		<%= x.text %><br />
+		</div>
+		<% end %>
+		
+	</div>
+</div>
+
