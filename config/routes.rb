@@ -37,6 +37,9 @@ Rails.application.routes.draw do
 
   get 'search/reddit'
   
+  %w(index trapmusic mixtapes main news audiomack hiphopearly hotnewhiphop audiocastle videos howflyhiphop worldstar reddit).each do |page|
+  match "#{page}", to: "search/#{page}", via: 'get'
+end
 
 
 

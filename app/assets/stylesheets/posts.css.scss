@@ -2,38 +2,110 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#scroll {
+width: 100%;
+height: 150px;
+margin: 50px auto;
+background: #fff;
+border: 2px solid #000;
+overflow: auto;
+white-space: nowrap;
+box-shadow: 0 0 10px #000;
+float: left;
+}
 
+#scroll img {
+margin:20px 10px 0 10px;
+height: 118px;
+width: 118px;
+
+}
+
+.sidebar {
+  float: right;
+  width: 33%;
+}
+
+.sidebar-images img {
+  float: left;
+  height: 53px;
+  width: 80px
+
+}
+
+.sidebar-text {
+  float: right;
+  width: 205px;
+  height: 30px;
+
+}
+
+.sidebar-image-text-box {
+  height: 72px;
+  width: 300px;
+  margin: 2px 2px;
+  padding: 2px 2px;
+}
 
 
 #siteContainer{
 	width: 990px;
 	margin: 0 auto;
   margin-top: 130px;
+  height: 100%;
 }
 
 
-.infoContainer{
+.youtube-div{
+  margin: 2px 2px;
+  padding: 2px 2px;
+  height: 80px;
+  width: 48%;
+  display: inline-block;
+}
 
-  height: 100px;
-  width: 100%;
+.imageContainer img {
+  float: left;
+  height: 75px;
+  width: 75px;
   
 }
 
-.imageContainer{
-  height: 100px;
-  width: 100px;
+.youtube-text {
   float: left;
-}
-
-.postInfo{
- padding-left: 120px;
- padding-top: 20px;
+  width: 200px;
+  height: 75px;
+  margin-left: 10px;
 }
 
 .alltheInfo{
-  padding-top: 80px;
+  margin-top: 80px;
+  height: 100%;
 }
 
+.search-links {
+  
+  margin-top: 550px;
+}
+
+.posts-div {
+  float: left;
+  border-color: red;
+  margin-top: 10px;
+  width: 66%;
+}
+
+.import-stuff {
+  clear: both;
+  float: left;
+  width: 300px
+}
+
+.search-links {
+  float: left;
+  clear: both;
+  width: 990px;
+}
 
 
 /* ----------------------------------------------------------------------------------------------------------
@@ -169,6 +241,7 @@ h1 { color: white }
     box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     margin-top: 20px;
     position: relative;
+    float: left;
 }
 
 #slideshow-inner {

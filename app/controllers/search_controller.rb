@@ -1,4 +1,5 @@
 
+
 class SearchController < ApplicationController
 
    def requires 
@@ -26,9 +27,6 @@ class SearchController < ApplicationController
     #zip and map the arrays to display
 
     @pit = Hash[@news_links.zip(@images)]
-    
-   
-
   end 
 
   def hotnewhiphop
@@ -53,12 +51,34 @@ class SearchController < ApplicationController
     page = agent.get('http://www.audiomack.com/songs/day') 
     @post_links = page.search('h3.artist-title a')
     @post_links.attr('href')
-
     @audiomack_images = page.search('.cover img')
-
     @jam = Hash[@post_links.zip(@audiomack_images)]
+
+    page13 = agent.get('http://www.audiomack.com/trending')
+    @trending_links = page13.search('.artist-title a')
+    @trending_images = page13.search('.cover img')
+    @trending_hash = Hash[@trending_links.zip(@trending_images)]
+
+
+=begin
+    #Take our search array, insert it into a query
+    search_terms.each do |search|
+    page = agent.get("http://www.asus.com/Search/?SearchKey=#{search}")
+    links =  page.links.find_all{ |l| l.text =~ /#{search}/i}
+    links.each { |links_text| results_file.write( "#{links_text}\n" ) }
+    end 
+
+    var = page.search('.artist-title')
+    page15 = agent.get('http://www.google.com')
+    google = page15.form
+    search_term = var[0].text
+    google.field_with(:name => "q").value = search_term
+    @search_results = agent.submit(google)
+=end 
     
-  end 
+  end
+
+
 
   def hiphopearly
     requires

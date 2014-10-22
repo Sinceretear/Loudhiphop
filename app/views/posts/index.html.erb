@@ -1,178 +1,235 @@
 <div id="siteContainer">
 
-<p>THIS IS LOUDHIPHOP.COM - CLICK THE SONG TO VIEW THE MUSIC VIDEO!</p>
-		<!-- THE FUCKING SLIDER CODE -->
+   <div class="alltheInfo">
 
-    <div id="slideshow-wrap">
-        <input type="radio" id="button-1" name="controls" checked="checked"/>
-        <label for="button-1"></label>
-        <input type="radio" id="button-2" name="controls"/>
-        <label for="button-2"></label>
-        <input type="radio" id="button-3" name="controls"/>
-        <label for="button-3"></label>
-        <input type="radio" id="button-4" name="controls"/>
-        <label for="button-4"></label>
-        <input type="radio" id="button-5" name="controls"/>
-        <label for="button-5"></label>
-        <label for="button-1" class="arrows" id="arrow-1">></label>
-        <label for="button-2" class="arrows" id="arrow-2">></label>
-        <label for="button-3" class="arrows" id="arrow-3">></label>
-        <label for="button-4" class="arrows" id="arrow-4">></label>
-        <label for="button-5" class="arrows" id="arrow-5">></label>
-        <div id="slideshow-inner">
-            <ul>
-                <li id="slide1">
-                    <img src="http://imgur.com/h8LR0Bi.jpg" />
-                    <div class="description">
-                        <input type="checkbox" id="show-description-1"/>
-                        <label for="show-description-1" class="show-description-label">I</label>
-                        <div class="description-text">
-                            <h2>Flower power</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+        <p>THIS IS LOUDHIPHOP.COM - CLICK THE SONG TO VIEW THE MUSIC VIDEO!</p>
+        <p>Links to popular hiphop site and some links and news/mixtapes/singles from each</p>
+        		<!-- THE FUCKING SLIDER CODE -->
+
+            <div id="slideshow-wrap">
+                <input type="radio" id="button-1" name="controls" checked="checked"/>
+                <label for="button-1"></label>
+                <input type="radio" id="button-2" name="controls"/>
+                <label for="button-2"></label>
+                <input type="radio" id="button-3" name="controls"/>
+                <label for="button-3"></label>
+                <input type="radio" id="button-4" name="controls"/>
+                <label for="button-4"></label>
+                <input type="radio" id="button-5" name="controls"/>
+                <label for="button-5"></label>
+                <label for="button-1" class="arrows" id="arrow-1">></label>
+                <label for="button-2" class="arrows" id="arrow-2">></label>
+                <label for="button-3" class="arrows" id="arrow-3">></label>
+                <label for="button-4" class="arrows" id="arrow-4">></label>
+                <label for="button-5" class="arrows" id="arrow-5">></label>
+                <div id="slideshow-inner">
+                    <ul>
+                        <li id="slide1">
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <div class="description">
+                                <input type="checkbox" id="show-description-1"/>
+                                <label for="show-description-1" class="show-description-label">I</label>
+                                <div class="description-text">
+                                    <h2>Loudhiphop</h2>
+                                    <p>Loudhiphop</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="slide2">
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <div class="description">
+                                <input type="checkbox" id="show-description-2"/>
+                                <label for="show-description-2" class="show-description-label">I</label>
+                                <div class="description-text">
+                                    <h2>Loudhiphop</h2>
+                                    <p>Loudhiphop</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="slide3">
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <div class="description">
+                                <input type="checkbox" id="show-description-3"/>
+                                <label for="show-description-3" class="show-description-label">I</label>
+                                <div class="description-text">
+                                    <h2>Loudhiphop</h2>
+                                    <p>Loudhiphop</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="slide4">
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <div class="description">
+                                <input type="checkbox" id="show-description-4"/>
+                                <label for="show-description-4" class="show-description-label">I</label>
+                                <div class="description-text">
+                                    <h2>Loudhiphop</h2>
+                                    <p>Loudhiphop</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="slide5">
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <div class="description">
+                                <input type="checkbox" id="show-description-5"/>
+                                <label for="show-description-5" class="show-description-label">I</label>
+                                <div class="description-text">
+                                    <h2>Loudhiphop</h2>
+                                    <p>Loudhiphop</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+         <!-- THE FUCKING SLIDER CODE -->  
+
+            <% if user_signed_in? %>
+                <p> Welcome <%= current_user.email %> </p>
+            <% end %>
+
+
+        	
+
+                  <div id="scroll">
+                            <a href="/search/audiomack"><img src="http://i.imgur.com/nj3QqLr.jpg"/></a>
+                            <a href="/search/hotnewhiphop"><img src="http://i.imgur.com/wK3Gkub.jpg"/></a>
+                            <a href="/search/videos"><img src="http://i.imgur.com/c5daQLK.jpg"/></a>      
+                            <a href="/search/audiocastle"><img src="http://i.imgur.com/5OL32Ff.jpg"/></a>
+                            <a href="/search/hiphopearly"><img src="http://i.imgur.com/mBU8hkw.jpg"/></a>
+                            <%= link_to(image_tag("http://i.imgur.com/RF3HOUC.jpg"), search_mixtapes_path) %>          
+                            <a href="/search/howflyhiphop"><img src="http://i.imgur.com/5n53gLF.jpg"/></a>           
+                            <a href="/search/worldstar"><img src="http://i.imgur.com/AuYMRm8.jpg"/></a>
+                            <a href="/search/reddit"><img src="http://i.imgur.com/ikmHJyB.jpg"/></a>  
                         </div>
+
+
+                    <div class="posts-div">
+                    <h2>New Music Videos - Youtube Links</h2>
+                    <br />
+                        <% @posts.each do |post| %>
+                            <div class="youtube-div">
+                            
+                                <div class="imageContainer">
+                                    <img src = "<%= post.images %>" width="100px" height="100px">
+                                </div>
+                                <div class="youtube-text">
+                                        
+                                        <p><%= link_to post.title, post %></p>
+                                        <p><%= post.artist %></p>
+                                        <p>
+                                            <%= link_to "Edit", edit_post_path(post) %>
+                                            <%= link_to "Delete", post, :confirm => "u forreal?", :method => :delete %>
+                                        </p>
+                                        
+                                </div>
+                            </div>
+                        <% end %>
+
+                         <div class="import-stuff">
+                        <p><%= link_to "add new post", new_post_path %></p>
+                        <br />
+                         <p><%= will_paginate @posts %></p>
+                        <br />
+                        <h2>Import Songs</h2>
+                        <%= form_tag import_posts_path, multipart: true do %>
+                            <%= file_field_tag :file %>
+                            <%= submit_tag "Import" %>
+                        <% end %>
+                        <br />
+                    </div> 
+
                     </div>
-                </li>
-                <li id="slide2">
-                    <img src="http://imgur.com/h8LR0Bi.jpg" />
-                    <div class="description">
-                        <input type="checkbox" id="show-description-2"/>
-                        <label for="show-description-2" class="show-description-label">I</label>
-                        <div class="description-text">
-                            <h2>Golden sunset</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
-                        </div>
+
+                    <div class="sidebar">
+                        <% @pit.each do |k, v| %>
+                            <div class="sidebar-image-text-box">
+                                <div class="sidebar-images">
+                                      <a href="<%= k.attr('href').to_s %>"><img src="<%= v.attr('src').to_s %>"/></a>
+                                    <div class="sidebar-text">
+                                        <p><%= v.attr('alt').to_s %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
                     </div>
-                </li>
-                <li id="slide3">
-                    <img src="http://imgur.com/h8LR0Bi.jpg" />
-                    <div class="description">
-                        <input type="checkbox" id="show-description-3"/>
-                        <label for="show-description-3" class="show-description-label">I</label>
-                        <div class="description-text">
-                            <h2>Flower power again</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
-                        </div>
+
+    <div class="posts-div">
+
+                <h2>These are the <%= link_to "AudioMack", 'http://www.audiomack.com/' %> links for today</h2><br />
+        
+                <!--
+                Make it link to a loud hip hop page that will scrape the download links from the top results. 
+                -->
+        
+        
+            <% @jam.each do |x, i| %>
+                <div class="youtube-div">
+                    <div class="imageContainer">
+                        <a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a>
                     </div>
-                </li>
-                <li id="slide4">
-                    <img src="http://imgur.com/h8LR0Bi.jpg" />
-                    <div class="description">
-                        <input type="checkbox" id="show-description-4"/>
-                        <label for="show-description-4" class="show-description-label">I</label>
-                        <div class="description-text">
-                            <h2>Stormy coast</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
-                        </div>
+                    <div class="youtube-text">
+                        <%= x.text %>
+                        <% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
+                            <a href=<%= link %> target="_blank">Download</a>
+                        <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
+                            <a href=<%= link1 %> target="_blank">Youtube</a>
                     </div>
-                </li>
-                <li id="slide5">
-                    <img src="http://imgur.com/h8LR0Bi.jpg" />
-                    <div class="description">
-                        <input type="checkbox" id="show-description-5"/>
-                        <label for="show-description-5" class="show-description-label">I</label>
-                        <div class="description-text">
-                            <h2>Splash!</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+            <% end %>
+                    
+            <% @trending_hash.each do |x, i| %>
+                <div class="youtube-div">
+                <div class="imageContainer">
+                <a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a>
+                </div>
+                <div class="youtube-text">
+                <%= x.text %>
+                <% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
+                    <a href=<%= link %> target="_blank">Download</a>
+                <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
+                    <a href=<%= link1 %> target="_blank">Youtube</a>
+                </div>
+                </div>
+            <% end %>
+
     </div>
 
- <!-- THE FUCKING SLIDER CODE -->  
-
-
-    <% if user_signed_in? %>
-        <p> Welcome <%= current_user.email %> </p>
-    <% end %>
-
-
-	<div class="alltheInfo">
-			
-			<% @posts.each do |post| %>
-				
-				<div class="infoContainer">
-
-
-					<div class="imageContainer">
-
-						<img src = "<%= post.images %>" width="100px" height="100px">
-
-					</div>
-					
-					<div class="postInfo">
-							
-                            <p><%= link_to post.title, post %></p>
-							<p><%= post.artist %></p>
-							<p>
-								<%= link_to "Edit", edit_post_path(post) %>
-								<%= link_to "Delete", post, :confirm => "u forreal?", :method => :delete %>
-							</p>
-                            
-					</div>
-				</div>
-            
-				<hr />
-			<% end %>
-
-			<p><%= link_to "add new post", new_post_path %></p>
-            <br />
-            <br />
-            <br />
-
-
-             <p><%= will_paginate @posts %></p>
+    <div class="posts-div">
+        <h2>These are the <%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %> links for this week hnnh/archive</h2>
 
             <br />
-            <br />
-            <br />
 
-
-            <h2>Import Songs</h2>
-
-
-            <%= form_tag import_posts_path, multipart: true do %>
-                <%= file_field_tag :file %>
-                <%= submit_tag "Import" %>
+            <% @hnhh_hash.each do |x, i| %>
+            <div class="youtube-div">
+            <div class="imageContainer">
+            <a href="<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>" style=""/></a>
+            </div>
+            <div class="youtube-text">
+            <%= x.text %>
+            <% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
+             <a href=<%= link %> target="_blank">Download</a>
+             <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
+             <a href=<%= link1 %> target="_blank">Youtube</a>
+             </div>
+            </div>
             <% end %>
     </div>
-</div>
 
 
-<br />
-<br />
-
-<div style="margin-left: 200px; margin-top: 25px">
 
 
-<!--
-<p>add atrilli to the list multiple pages</p>
-<p>page of realease dates http://cantstophiphop.com/release-dates/ maybe find a comprable list</p>
--->
 
 
-</div>
 
-    <div style="margin-left: 200px">
-        <div style="width: 990px; float: left">
-
-        <a href="/search/audiomack"><img src="http://i.imgur.com/nj3QqLr.jpg"/></a>
-        <a href="/search/hotnewhiphop"><img src="http://i.imgur.com/wK3Gkub.jpg"/></a>
-        <a href="/search/videos"><img src="http://i.imgur.com/c5daQLK.jpg"/></a>
-
-        <br />
-        <br />
-
-
-        <a href="/search/audiocastle"><img src="http://i.imgur.com/5OL32Ff.jpg"/></a>
-        <a href="/search/hiphopearly"><img src="http://i.imgur.com/mBU8hkw.jpg"/></a>
-        <%= link_to(image_tag("http://i.imgur.com/RF3HOUC.jpg"), search_mixtapes_path) %>
-        <a href="/search/howflyhiphop"><img src="http://i.imgur.com/5n53gLF.jpg"/></a>
-        <a href="/search/worldstar"><img src="http://i.imgur.com/AuYMRm8.jpg"/></a>
-        <a href="/search/reddit"><img src="http://i.imgur.com/ikmHJyB.jpg"/></a>
-
-        
     </div>
 </div>
+
+        
+
+
+
+
+
 
