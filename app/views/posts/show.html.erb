@@ -1,28 +1,39 @@
 <div id="siteContainer">
-	
-<%= link_to "back", posts_path %>
+		
+		<%= link_to "back", posts_path %>
 
-<%= @example %>
-<br />
-<br />
+	<br />
+	<br />
 
-<h1><%= @posts.title %></h1>
-<p><%= @posts.artist %></p>
-<small><%= @posts.created_at %></small>
-<br />
-<br />
-<iframe width="1024" height="576" src="//www.youtube.com/embed/<%= @search_results %>" frameborder="0" allowfullscreen></iframe><br />
-<br />
-<br />
-<h1><%= @posts.title %></h1>
-<p><%= @posts.artist %></p>
-<small><%= @posts.created_at %></small>
-
-
-<br />
-<br />
-<h2> http://www.youtube-mp3.org/ </h2>
-<br />
-<br />
+		<p><%= @posts.artist %></p>
+		<small><%= @posts.created_at %></small>
+	<br />
+	<br />
+		<iframe width="1024" height="576" src="//www.youtube.com/embed/<%= @search_results %>" frameborder="0" allowfullscreen></iframe><br />
+	<br />
+	<br />
+	<br />
+	<br />
+		<table>
+			<tr>
+				<th>Origin Site</th>
+				<th>Download Link</th>
+				<th>Clicks</th>
+			</tr>
+			<tr>
+				<th>Youtube Download</th>
+				<th><%= link_to "YouTube MP3 Download", "http://www.youtube-mp3.org/get?ab=128&video_id=#{@search_results}", :headers => {"Accept-Location" => "*"}, :target => "_blank" %></th>
+				<th><%= "in_progress" %></th>
+			</tr>
+			<% @google_links.each do |x| %>
+			<tr>
+			    <td><%= x.attr('href').to_s.split('/')[3] %></td>
+			    <td><%= link_to "Link Button", x.attr('href').to_s.split('&')[0].slice!(7, 1000), :target => "_blank"  %></td>
+			    <td><%= "in_progress" %>
+			</td>
+			<% end %>
+		</table>
+	<br />
+	<br />
 
 </div>

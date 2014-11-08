@@ -104,97 +104,59 @@
                             <a href="/search/reddit"><img src="http://i.imgur.com/ikmHJyB.jpg"/></a>  
                         </div>
 
-
-                    <div class="posts-div">
-                    <h2>New Music Videos - Youtube Links</h2>
-                    <br />
-                        <% @posts.each do |post| %>
-                            <div class="youtube-div">
-                            
-                                <div class="imageContainer">
-                                    <img src = "<%= post.images %>" width="100px" height="100px">
-                                </div>
-                                <div class="youtube-text">
-                                        
-                                        <p><%= link_to post.title, post %></p>
-                                        <p><%= post.artist %></p>
-                                        <p>
-                                            <%= link_to "Edit", edit_post_path(post) %>
-                                            <%= link_to "Delete", post, :confirm => "u forreal?", :method => :delete %>
-                                        </p>
-                                        
-                                </div>
-                            </div>
-                        <% end %>
-
-                         <div class="import-stuff">
-                        <p><%= link_to "add new post", new_post_path %></p>
-                        <br />
-                         <p><%= will_paginate @posts %></p>
-                        <br />
-                        <h2>Import Songs</h2>
-                        <%= form_tag import_posts_path, multipart: true do %>
-                            <%= file_field_tag :file %>
-                            <%= submit_tag "Import" %>
-                        <% end %>
-                        <br />
-                    </div> 
-
-                    </div>
-
-                    <div class="sidebar">
-                        <% @pit.each do |k, v| %>
-                            <div class="sidebar-image-text-box">
-                                <div class="sidebar-images">
-                                      <a href="<%= k.attr('href').to_s %>"><img src="<%= v.attr('src').to_s %>"/></a>
-                                    <div class="sidebar-text">
-                                        <p><%= v.attr('alt').to_s %></p>
+                     <div class="sidebar">
+                            <% @pit.each do |k, v| %>
+                                <div class="sidebar-image-text-box">
+                                    <div class="sidebar-images">
+                                          <a href="<%= k.attr('href').to_s %>" target="_blank"><img src="<%= v.attr('src').to_s %>"/></a>
+                                        <div class="sidebar-text">
+                                            <p><%= v.attr('alt').to_s %></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <% end %>
+                            <% end %>
+                        </div>
+            
+
+
+                    <div class="posts-div">
+                    <h2>These are the <%= link_to "AudioMack", 'http://www.audiomack.com/' %> links for today</h2><br />
+                        <h2>New Music Videos - Youtube Links</h2>
+                        <p>click the image for the original link</p>
+                        <p>click the link for the youtube and download links</p>
+
+                        <br />
+                            <% @posts.each do |post| %>
+                                <div class="youtube-div">
+                                
+                                    <div class="imageContainer">
+                                        <a href="<%= post.title %>" target="_blank"><img src = "<%= post.images %>">
+                                    </div>
+                                    <div class="youtube-text">
+                                            <p><%= link_to post.artist, post, target: '_blank' %></p><br />
+                                            
+                                    </div>
+                                </div>
+                            <% end %>
+                            <br />
+                            <br />
+                                <p><%= will_paginate @posts %></p>
+                            <br />
                     </div>
+    
+                               
+                                
 
-    <div class="posts-div">
+                       
 
-                <h2>These are the <%= link_to "AudioMack", 'http://www.audiomack.com/' %> links for today</h2><br />
+               
         
                 <!--
                 Make it link to a loud hip hop page that will scrape the download links from the top results. 
-                -->
-        
-        
-            <% @jam.each do |x, i| %>
-                <div class="youtube-div">
-                    <div class="imageContainer">
-                        <a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a>
-                    </div>
-                    <div class="youtube-text">
-                        <%= x.text %>
-                        <% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
-                            <a href=<%= link %> target="_blank">Download</a>
-                        <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
-                            <a href=<%= link1 %> target="_blank">Youtube</a>
-                    </div>
-                </div>
-            <% end %>
-                    
-            <% @trending_hash.each do |x, i| %>
-                <div class="youtube-div">
-                <div class="imageContainer">
-                <a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a>
-                </div>
-                <div class="youtube-text">
-                <%= x.text %>
-                <% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
-                    <a href=<%= link %> target="_blank">Download</a>
-                <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
-                    <a href=<%= link1 %> target="_blank">Youtube</a>
-                </div>
-                </div>
-            <% end %>
 
-    </div>
+                scrape upcoming projects and songs and display somewhere.
+                -->
+       
 
     <div class="posts-div">
         <h2>These are the <%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %> links for this week hnnh/archive</h2>
@@ -204,7 +166,7 @@
             <% @hnhh_hash.each do |x, i| %>
             <div class="youtube-div">
             <div class="imageContainer">
-            <a href="<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>" style=""/></a>
+            <a href="<%= x.attr('href').to_s %>" target="_blank"><img src="<%= i.attr('src').to_s %>" style=""/></a>
             </div>
             <div class="youtube-text">
             <%= x.text %>

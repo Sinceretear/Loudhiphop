@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all 
-    @posts = Post.paginate(:page => params[:page], :per_page => 6,).order('created_at DESC')
+    @posts = Post.paginate(:page => params[:page], :per_page => 24,).order('created_at DESC')
 
     #require 'youtube_search'
     #@var = 'posed to be in love'
@@ -23,36 +23,73 @@ class PostsController < ApplicationController
         #zip and map the arrays to display
         @pit = Hash[@news_links.zip(@images)]
 
-
+        # audio mack links -- connected to the trending...scrapes 2 pages here. 
         page1 = agent.get('http://www.audiomack.com/songs/day') 
         @post_links = page1.search('h3.artist-title a')
         @post_links.attr('href')
         @audiomack_images = page1.search('.cover img')
         @jam = Hash[@post_links.zip(@audiomack_images)]
 
+         @jam.each do |x, i|
+          artist_name_title = x.text
+          audiomack_link = "http://www.audiomack.com" + x.attr('href').to_s 
+          image_link =  i.attr('src').to_s 
+
+          if Post.exists?(:artist => artist_name_title)
+            next
+          else 
+            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link)
+          end 
+        end 
+
         page13 = agent.get('http://www.audiomack.com/trending')
         @trending_links = page13.search('.artist-title a')
         @trending_images = page13.search('.cover img')
         @trending_hash = Hash[@trending_links.zip(@trending_images)]
 
+        @trending_hash.each do |x, i|
+          artist_name_title = x.text
+          image_link =  i.attr('src').to_s 
+          audiomack_link = "http://www.audiomack.com" + x.attr('href').to_s 
+          if Post.exists?(:artist => artist_name_title)
+            next
+          else 
+            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link)
+          end 
+        end 
+
+
+        # hnhh scrapes 
         page2 = agent.get('http://www.hotnewhiphop.com/archive/')
         @hnhh_songs = page2.search('.list-item-title a')
         @hnhh_songs.attr('href')
-
         @hnhh_images = page2.search('.image38')
-
         @hnhh_hash = Hash[@hnhh_songs.zip(@hnhh_images)]
 
   end
 
   def show #retrive and display individual post	
-  	@posts = Post.find(params[:id])
+  	@posts = Post.friendly.find(params[:id])
 
     barn = params[:id]
-    @example = Post.find(barn).artist + " " + Post.find(barn).title 
+    @example = Post.friendly.find(barn).artist 
 
     require 'youtube_search'
     @search_results = YoutubeSearch.search( @example,'order_by' => 'viewcount').first['video_id']
+
+    google_search =  @posts.artist.delete("&").gsub(/\s+/, " ") + ' download'
+
+    
+    require 'mechanize'
+        require 'nokogiri'
+        require 'open-uri'
+
+        agent = Mechanize.new
+    page = agent.get('http://www.google.com') 
+    search_form = page.form_with(:name => 'f')
+    search_form.field_with(:name => 'q').value = google_search.to_s
+    search_results = agent.submit(search_form)
+    @google_links = search_results.search('.r a')
 
   end 
 
@@ -101,5 +138,5 @@ class PostsController < ApplicationController
   	params.require(:post).permit(:title, :artist, :images)
   end 
 
-end
-  
+end  
+

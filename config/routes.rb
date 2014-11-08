@@ -3,40 +3,34 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   
-  get 'search/index'
+  #root route 
+  root to: 'posts#index'
 
   resources :posts do #creates set of routes index, show, new/create, edit/update, destroy
     collection { post :import }
   end 
-  
-  root to: 'posts#index'
 
+  #show routes 
+
+  # home routes 
   get 'home/index'
-
   get 'home/trapmusic'
 
+  # search routes 
+  get 'search/index'
   get 'search/mixtapes'
-
   get 'search/main'
-
   get 'search/news'
-
   get 'search/audiomack'
-
   get 'search/hiphopearly'
-  
   get 'search/hotnewhiphop'
-  
   get 'search/audiocastle'
- 
   get 'search/videos'
-
   get 'search/howflyhiphop'
-
   get 'search/worldstar'
-
   get 'search/reddit'
   
+  #random code that doesnt work 
   %w(index trapmusic mixtapes main news audiomack hiphopearly hotnewhiphop audiocastle videos howflyhiphop worldstar reddit).each do |page|
   match "#{page}", to: "search/#{page}", via: 'get'
 end
