@@ -20,7 +20,6 @@ gem 'nokogiri'
 
 gem 'friendly_id'
 
-gem 'yt_mp3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
