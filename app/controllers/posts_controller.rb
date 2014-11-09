@@ -58,7 +58,6 @@ class PostsController < ApplicationController
           end 
         end 
 
-
         # hnhh scrapes 
         page2 = agent.get('http://www.hotnewhiphop.com/archive/')
         @hnhh_songs = page2.search('.list-item-title a')
