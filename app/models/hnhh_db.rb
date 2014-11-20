@@ -1,21 +1,21 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: hnhh_dbs
 #
 #  id            :integer          not null, primary key
 #  title         :string(255)
 #  artist        :string(255)
+#  images        :string(255)
+#  slug          :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
-#  images        :text
-#  slug          :string(255)
 #  original_site :string(255)
 #
 
-require 'test_helper'
+class HnhhDb < ActiveRecord::Base
 
-class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+	extend FriendlyId
+		friendly_id :artist, use: :slugged
+
+
 end

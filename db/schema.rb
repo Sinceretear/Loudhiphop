@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108183911) do
+ActiveRecord::Schema.define(version: 20141113161533) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20141108183911) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "hnhh_dbs", force: true do |t|
+    t.string   "title"
+    t.string   "artist"
+    t.string   "images"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "original_site"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "artist"
@@ -38,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141108183911) do
     t.datetime "updated_at"
     t.text     "images"
     t.string   "slug"
+    t.string   "original_site"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug"
@@ -47,6 +58,23 @@ ActiveRecord::Schema.define(version: 20141108183911) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  add_index "songs", ["slug"], name: "index_songs_on_slug"
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

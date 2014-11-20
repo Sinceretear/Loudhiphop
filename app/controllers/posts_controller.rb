@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   	@posts = Post.all 
     @posts = Post.paginate(:page => params[:page], :per_page => 24,).order('created_at DESC')
 
+    @Hnhh = HnhhDb.all
+    @Hnhh = HnhhDb.paginate(:page => params[:page], :per_page => 24,).order('created_at DESC')
+
     #require 'youtube_search'
     #@var = 'posed to be in love'
     #methods that coincide with this plugin: https://github.com/grosser/youtube_search
@@ -38,7 +41,7 @@ class PostsController < ApplicationController
           if Post.exists?(:artist => artist_name_title)
             next
           else 
-            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link)
+            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link, :original_site => "Audiomack")
           end 
         end 
 
@@ -51,10 +54,11 @@ class PostsController < ApplicationController
           artist_name_title = x.text
           image_link =  i.attr('src').to_s 
           audiomack_link = "http://www.audiomack.com" + x.attr('href').to_s 
+
           if Post.exists?(:artist => artist_name_title)
             next
           else 
-            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link)
+            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link, :original_site => "Audiomack")
           end 
         end 
 
@@ -64,6 +68,36 @@ class PostsController < ApplicationController
         @hnhh_songs.attr('href')
         @hnhh_images = page2.search('.image38')
         @hnhh_hash = Hash[@hnhh_songs.zip(@hnhh_images)]
+
+        @hnhh_hash.each do |x, i|
+          hnhh_link = x.attr('href').to_s
+          image_link = i.attr('src').to_s
+          artist_name_title = x.text
+
+        if HnhhDb.exists?(:artist => artist_name_title)
+            next
+          else 
+            HnhhDb.create(:artist => artist_name_title, :images => image_link, :title => hnhh_link, :original_site => "HotNewHipHop")
+          end 
+        end 
+
+        #code for the videos. this index method is getting bloated
+        agent5 = Mechanize.new 
+      page5 = agent5.get('http://www.hiphopdx.com/index/videos/p.1')
+      @videos_hhdx = page5.search('h3 a')
+
+      @hhdx_images = page5.search('#wirelist2 img')
+
+      @hhdx_hash = Hash[@videos_hhdx.zip(@hhdx_images)]
+
+      agent6 = Mechanize.new 
+      page6 = agent6.get('http://www.hotnewhiphop.com/videos/ ')
+      @hnhh_video_links = page6.search('.list-item-title a')
+      @hnhh_video_images = page6.search('.video-thumb .w100per')
+      @hnhh_video_hash = Hash[@hnhh_video_links.zip(@hnhh_video_images)]
+
+
+
 
   end
 
@@ -76,7 +110,7 @@ class PostsController < ApplicationController
     require 'youtube_search'
     @search_results = YoutubeSearch.search( @example,'order_by' => 'viewcount').first['video_id']
 
-    google_search =  @posts.artist.delete("&").gsub(/\s+/, " ") + ' download'
+    
 
     
     require 'mechanize'
@@ -86,6 +120,7 @@ class PostsController < ApplicationController
         agent = Mechanize.new
     page = agent.get('http://www.google.com') 
     search_form = page.form_with(:name => 'f')
+    google_search =  @posts.artist.delete("&").gsub(/\s+/, " ") + ' download'
     search_form.field_with(:name => 'q').value = google_search.to_s
     search_results = agent.submit(search_form)
     @google_links = search_results.search('.r a')

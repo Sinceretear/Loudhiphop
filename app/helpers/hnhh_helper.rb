@@ -1,0 +1,2 @@
+module HnhhHelper
+end

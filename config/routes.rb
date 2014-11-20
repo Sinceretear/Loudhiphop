@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end 
 
   #show routes 
+resources :hnhh
+  get 'hnhh/show'
 
   # home routes 
   get 'home/index'
