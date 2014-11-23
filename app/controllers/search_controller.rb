@@ -10,12 +10,17 @@ class SearchController < ApplicationController
 
 
   def index  
-    
+    @News = News.all
+
+    @mixtape = Mixtapes.all
   
 
   end   
 
   def news 
+
+    @News = News.all
+    
   	requires
 
     agent = Mechanize.new
@@ -27,6 +32,26 @@ class SearchController < ApplicationController
     #zip and map the arrays to display
 
     @pit = Hash[@news_links.zip(@images)]
+
+
+    @pit.each do |x, i|
+          artical_name_title = i.attr('alt').to_s
+          news_link = x.attr('href').to_s
+          image_link =  i.attr('src').to_s
+
+          if News.exists?(:title => artical_name_title)
+            next
+          else 
+            News.create(:title => artical_name_title, :image => image_link, :link => news_link)
+          end 
+        end 
+
+
+
+
+
+
+
   end 
 
   def hotnewhiphop
@@ -110,20 +135,50 @@ class SearchController < ApplicationController
   def mixtapes 
     requires 
 
+    @mixtape = Mixtapes.all
+
     agent7 = Mechanize.new 
     page7 = agent7.get('http://www.livemixtapes.com/main.php')
     @lm_links = page7.search('#content span a')
-    @lm_images = page7.search('#content img')
+    @lm_images = page7.search('.mixtape_cover img')
     @lm_hash = Hash[@lm_links.zip(@lm_images)]
+
+    @lm_hash.each do |x, i|
+          artist_name_title = x.text
+          image_link =  i.attr('src').to_s 
+          livemixtapes_link = "http://www.livemixtapes.com" + x.attr('href').to_s 
+
+          if Mixtapes.exists?(:artist => artist_name_title)
+            next
+          else 
+            Mixtapes.create(:artist => artist_name_title, :mx_cover => image_link, :mx_name => livemixtapes_link)
+          end 
+        end 
+
+
+
 
     agent8 = Mechanize.new
     page8 = agent8.get('http://www.datpiff.com/')
     @dp_links = page8.search('#leftColumnWide .title a')
     @dp_images = page8.search('#leftColumnWide .contentThumb img')
-
+    @dp_artist = page8.search('.artist')
     @dp_hash = Hash[@dp_links.zip(@dp_images)]
 
+    @new_array = @dp_links.zip(@dp_images, @dp_artist)
 
+    @new_array.each do |x, i, z| 
+      dp_link = "http://www.datpiff.com" + x.attr('href')
+      dp_image = i.attr('src') 
+      dp_artist = x.attr('title').to_s.gsub(/^(listen to )/, '') 
+      dp_mxname = z.text 
+
+      if Mixtapes.exists?(:artist => dp_artist)
+          next
+        else 
+          Mixtapes.create(:artist => dp_artist, :mx_cover => dp_image, :mx_name => dp_mxname, :mx_artist =>dp_link )
+        end 
+    end
 
 
   end 

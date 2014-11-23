@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113161533) do
+ActiveRecord::Schema.define(version: 20141121184609) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,6 +39,23 @@ ActiveRecord::Schema.define(version: 20141113161533) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "original_site"
+  end
+
+  create_table "mixtapes", force: true do |t|
+    t.string   "artist"
+    t.string   "mx_name"
+    t.string   "mx_cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "mx_artist"
+  end
+
+  create_table "news", force: true do |t|
+    t.string   "image"
+    t.string   "link"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
@@ -79,5 +96,13 @@ ActiveRecord::Schema.define(version: 20141113161533) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: true do |t|
+    t.string   "image"
+    t.string   "link"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

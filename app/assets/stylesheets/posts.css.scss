@@ -3,30 +3,51 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 // begining of jquery plugin styles 
 div .ui-widget-content {
   border: none;
   background: none;
 }
 
-#tabs .ui-widget-content {
+#tabs2 .ui-widget-content {
   background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
 }
 
-#tabs .ui-widget-content p {
+#tabs2 .ui-widget-content p {
   color: white;
 }
 
-#tabs .ui-widget-content a {
+#tabs2 .ui-widget-content a {
   color: white;
 }
 
-#tabs .ui-widget-content h2 {
+#tabs2 .ui-widget-content h2 {
   color: white;
 }
 
-#tabs .ui-widget-content div {
+#tabs2 .ui-widget-content div {
+  color: white;
+}
+
+// sidebar news and vids
+
+#tabs1 .ui-widget-content {
+  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+}
+
+#tabs1 .ui-widget-content p {
+  color: white;
+}
+
+#tabs1 .ui-widget-content a {
+  color: white;
+}
+
+#tabs1 .ui-widget-content h2 {
+  color: white;
+}
+
+#tabs1 .ui-widget-content div {
   color: white;
 }
 
@@ -53,8 +74,7 @@ width: 118px;
 
 .sidebar {
   float: right;
-  width: 33%;
-  margin-top: 80px;
+  width: 27%;
 }
 
 .sidebar-images img {
@@ -66,14 +86,15 @@ width: 118px;
 
 .sidebar-text {
   float: right;
-  width: 205px;
-  height: 30px;
-
+  width: 120px;
+  height: 53px;
+  padding-left: 10px;
+  overflow: hidden;
 }
 
 .sidebar-image-text-box {
   height: 72px;
-  width: 300px;
+  width: 100%;
   margin: 2px 2px;
   padding: 2px 2px;
 }
@@ -90,8 +111,8 @@ width: 118px;
 .youtube-div{
   margin: 2px 2px;
   padding: 2px 2px;
-  height: 80px;
-  width: 48%;
+  height: 72px;
+  width: 47%;
   display: inline-block;
 }
 
@@ -104,9 +125,10 @@ width: 118px;
 
 .youtube-text {
   float: left;
-  width: 200px;
+  width: 50%;
   height: 75px;
   margin-left: 10px;
+  overflow: hidden;
 }
 
 .alltheInfo{
@@ -122,8 +144,8 @@ width: 118px;
 .posts-div {
   float: left;
   border-color: red;
-  margin-top: 80px;
-  width: 66%;
+  margin-top: 40px;
+  width: 677px;
 }
 
 .import-stuff {
@@ -331,8 +353,8 @@ h1 { color: white }
 #slideshow-wrap {
     display: block;
     height: 320px;
-    min-width: 260px;
-    max-width: 640px;
+    min-width: 33%;
+    max-width: 66%;
     margin: auto;
     border: 12px rgba(255,255,240,1) solid;
     -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
@@ -372,8 +394,10 @@ h1 { color: white }
 }
 
 #slideshow-inner>ul>li>img {
-    margin: auto;
-    height: 100%;
+    margin-top: 114px;
+    margin-left: 250px;
+    height: 93px;
+    width: 140px;
 }
 
 #slideshow-wrap input[type=radio] {
@@ -492,12 +516,12 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 .description label {
     font-family: 'WebSymbolsRegular';
-    background-color: rgba(255,255,240,1);
+    background-color: black;
     position: relative;
     left: -17px;
     top: 00px;
-    width: 40px;
-    height: 27px;
+    width: 180px;
+    height: 40px;
     display: inline-block;
     text-align: center;
     padding-top: 7px;
@@ -518,6 +542,8 @@ input[type=radio]#button-5:checked~.arrows#arrow-4 { left: -73px }
 
 .description .description-text {
     background-color: rgba(255,255,230,.5);
+    margin-top: 40px;
+    margin-left: 60px;
     padding-left: 45px;
     padding-top: 25px;
     padding-right: 15px;

@@ -1,0 +1,868 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+/* line 7, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+div .ui-widget-content {
+  border: none;
+  background: none;
+}
+
+/* line 12, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs2 .ui-widget-content {
+  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+}
+
+/* line 16, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs2 .ui-widget-content p {
+  color: white;
+}
+
+/* line 20, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs2 .ui-widget-content a {
+  color: white;
+}
+
+/* line 24, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs2 .ui-widget-content h2 {
+  color: white;
+}
+
+/* line 28, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs2 .ui-widget-content div {
+  color: white;
+}
+
+/* line 34, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs1 .ui-widget-content {
+  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+}
+
+/* line 38, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs1 .ui-widget-content p {
+  color: white;
+}
+
+/* line 42, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs1 .ui-widget-content a {
+  color: white;
+}
+
+/* line 46, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs1 .ui-widget-content h2 {
+  color: white;
+}
+
+/* line 50, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#tabs1 .ui-widget-content div {
+  color: white;
+}
+
+/* line 56, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#scroll {
+  width: 100%;
+  height: 150px;
+  margin: 50px auto;
+  background: #fff;
+  border: 2px solid #000;
+  overflow: auto;
+  white-space: nowrap;
+  box-shadow: 0 0 10px #000;
+  float: left;
+}
+
+/* line 68, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#scroll img {
+  margin: 20px 10px 0 10px;
+  height: 118px;
+  width: 118px;
+}
+
+/* line 75, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.sidebar {
+  float: right;
+  width: 27%;
+}
+
+/* line 80, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.sidebar-images img {
+  float: left;
+  height: 53px;
+  width: 80px;
+}
+
+/* line 87, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.sidebar-text {
+  float: right;
+  width: 120px;
+  height: 53px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+
+/* line 95, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.sidebar-image-text-box {
+  height: 72px;
+  width: 100%;
+  margin: 2px 2px;
+  padding: 2px 2px;
+}
+
+/* line 103, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#siteContainer {
+  width: 990px;
+  margin: 0 auto;
+  margin-top: 130px;
+  height: 100%;
+}
+
+/* line 111, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.youtube-div {
+  margin: 2px 2px;
+  padding: 2px 2px;
+  height: 72px;
+  width: 47%;
+  display: inline-block;
+}
+
+/* line 119, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.imageContainer img {
+  float: left;
+  height: 75px;
+  width: 75px;
+}
+
+/* line 126, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.youtube-text {
+  float: left;
+  width: 50%;
+  height: 75px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+/* line 134, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.alltheInfo {
+  margin-top: 80px;
+  height: 100%;
+}
+
+/* line 139, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.search-links {
+  margin-top: 550px;
+}
+
+/* line 144, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.posts-div {
+  float: left;
+  border-color: red;
+  margin-top: 40px;
+  width: 677px;
+}
+
+/* line 151, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.import-stuff {
+  float: left;
+  width: 300px;
+}
+
+/* line 156, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.search-links {
+  float: left;
+  clear: both;
+  width: 990px;
+}
+
+/* line 162, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 640px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 170, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+table a {
+  color: black;
+}
+
+/* line 174, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+td, th {
+  border: 1px solid transparent;
+  /* No more visible border */
+  height: 30px;
+  transition: all 0.3s;
+  /* Simple transition for hover effect */
+}
+
+/* line 180, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+th {
+  background: #DFDFDF;
+  /* Darken header a bit */
+  font-weight: bold;
+}
+
+/* line 185, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+td {
+  background: #FAFAFA;
+  text-align: center;
+}
+
+/* Cells in even rows (2,4,6...) are one color */
+/* line 191, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr:nth-child(even) td {
+  background: #F1F1F1;
+}
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+/* line 194, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr:nth-child(odd) td {
+  background: #FEFEFE;
+}
+
+/* line 196, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr td:hover {
+  background: #666;
+  color: #FFF;
+}
+
+/* Hover cell effect! */
+/* ----------------------------------------------------------------------------------------------------------
+::Header -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+/* line 202, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header {
+  background: #000;
+  width: 100%;
+  height: 55px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  min-width: 980px;
+}
+
+/* line 211, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header .container {
+  padding-left: 0;
+  width: 100%;
+  max-width: 100%;
+  top: 0;
+}
+
+/* line 218, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header .brand-logo {
+  float: left;
+}
+
+/* line 221, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav {
+  float: left;
+}
+
+/* line 223, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 227, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header #login-menu {
+  float: right;
+}
+
+/* line 231, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li {
+  float: left;
+  display: inline-block;
+}
+
+/* line 235, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li a {
+  display: block;
+  float: right;
+  line-height: 25px;
+  padding: 15px 10px 15px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* line 244, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li a:hover {
+  color: #ffa200;
+}
+
+/* line 247, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li a:before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  font-weight: 400;
+  color: #949494;
+}
+
+/* line 254, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li:first-child a:before {
+  display: none;
+}
+
+/* line 257, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header nav li a:hover:before {
+  color: #949494;
+}
+
+/* line 260, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header form {
+  float: right;
+  margin-right: 10px;
+}
+
+/* line 264, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header input[type="text"] {
+  background: url("../images/search-icon.png") no-repeat 95% center #3c3c3c;
+  border: none;
+  border-radius: 4px;
+  width: 285px;
+  height: 30px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding: 0 35px 0 8px;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 282, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header .brand-logo {
+  float: left;
+  width: 300px;
+  height: 55px;
+}
+
+/* line 288, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#header .main-nav {
+  float: left;
+}
+
+/* line 290, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 640px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+
+/* line 299, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+td, th {
+  border: 1px solid transparent;
+  /* No more visible border */
+  height: 30px;
+  transition: all 0.3s;
+  /* Simple transition for hover effect */
+}
+
+/* line 305, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+th {
+  background: #DFDFDF;
+  /* Darken header a bit */
+  font-weight: bold;
+}
+
+/* line 310, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+td {
+  background: #FAFAFA;
+  text-align: center;
+}
+
+/* Cells in even rows (2,4,6...) are one color */
+/* line 316, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr:nth-child(even) td {
+  background: #F1F1F1;
+}
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+/* line 319, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr:nth-child(odd) td {
+  background: #FEFEFE;
+}
+
+/* line 321, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+tr td:hover {
+  background: #666;
+  color: #FFF;
+}
+
+/* Hover cell effect! */
+/* ----------------------------------------------------------------------------------------------------------
+::THE SLIDER CODE-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'WebSymbolsRegular';
+  src: url("http://html5css3demos.bplaced.net/css3-slider-v3/websymbols-regular-webfont.eot");
+  src: url("http://html5css3demos.bplaced.net/css3-slider-v3/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"), url("http://html5css3demos.bplaced.net/css3-slider-v3/websymbols-regular-webfont.woff") format("woff"), url("http://html5css3demos.bplaced.net/css3-slider-v3/websymbols-regular-webfont.ttf") format("truetype"), url("http://html5css3demos.bplaced.net/css3-slider-v3/websymbols-regular-webfont#WebSymbolsRegular") format("svg");
+}
+
+/* line 339, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 344, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+body {
+  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+  background-repeat: repeat;
+  height: 500px;
+  padding: 1px;
+}
+
+/* line 351, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+h1 {
+  color: white;
+}
+
+/* line 353, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap {
+  display: block;
+  height: 320px;
+  min-width: 33%;
+  max-width: 66%;
+  margin: auto;
+  border: 12px ivory solid;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  position: relative;
+  float: left;
+}
+
+/* line 368, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-inner {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 376, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-inner > ul {
+  list-style: none;
+  height: 100%;
+  width: 500%;
+  overflow: hidden;
+  position: relative;
+  left: 0px;
+  -webkit-transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: left 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* line 389, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-inner > ul > li {
+  width: 20%;
+  height: 320px;
+  float: left;
+  position: relative;
+}
+
+/* line 396, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-inner > ul > li > img {
+  margin-top: 114px;
+  margin-left: 250px;
+  height: 93px;
+  width: 140px;
+}
+
+/* line 403, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio] {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  z-index: 100;
+  visibility: hidden;
+}
+
+/* line 411, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label:not(.arrows):not(.show-description-label) {
+  position: absolute;
+  left: 50%;
+  bottom: -45px;
+  z-index: 100;
+  width: 12px;
+  height: 12px;
+  background-color: #c8c8c8;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  -o-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+/* line 432, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label:not(.arrows):active {
+  bottom: -46px;
+}
+
+/* line 434, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-1:checked ~ label[for=button-1] {
+  background-color: #646464;
+}
+
+/* line 436, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-2:checked ~ label[for=button-2] {
+  background-color: #646464;
+}
+
+/* line 438, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-3:checked ~ label[for=button-3] {
+  background-color: #646464;
+}
+
+/* line 440, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-4:checked ~ label[for=button-4] {
+  background-color: #646464;
+}
+
+/* line 442, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-5:checked ~ label[for=button-5] {
+  background-color: #646464;
+}
+
+/* line 444, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label[for=button-1] {
+  margin-left: -36px;
+}
+
+/* line 446, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label[for=button-2] {
+  margin-left: -18px;
+}
+
+/* line 448, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label[for=button-4] {
+  margin-left: 18px;
+}
+
+/* line 450, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap label[for=button-5] {
+  margin-left: 36px;
+}
+
+/* line 452, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-1:checked ~ #slideshow-inner > ul {
+  left: 0;
+}
+
+/* line 454, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-2:checked ~ #slideshow-inner > ul {
+  left: -100%;
+}
+
+/* line 456, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-3:checked ~ #slideshow-inner > ul {
+  left: -200%;
+}
+
+/* line 458, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-4:checked ~ #slideshow-inner > ul {
+  left: -300%;
+}
+
+/* line 460, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-wrap input[type=radio]#button-5:checked ~ #slideshow-inner > ul {
+  left: -400%;
+}
+
+/* line 462, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+label.arrows {
+  font-family: 'WebSymbolsRegular';
+  font-size: 25px;
+  color: ivory;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  display: none;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 1000;
+  background-color: transparent;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* line 481, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+label.arrows:hover {
+  opacity: 1;
+}
+
+/* line 483, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+label.arrows:active {
+  margin-top: -23px;
+}
+
+/* line 485, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+input[type=radio]#button-1:checked ~ .arrows#arrow-2, input[type=radio]#button-2:checked ~ .arrows#arrow-3, input[type=radio]#button-3:checked ~ .arrows#arrow-4, input[type=radio]#button-4:checked ~ .arrows#arrow-5 {
+  right: -55px;
+  display: block;
+}
+
+/* line 490, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+input[type=radio]#button-2:checked ~ .arrows#arrow-1, input[type=radio]#button-3:checked ~ .arrows#arrow-2, input[type=radio]#button-4:checked ~ .arrows#arrow-3, input[type=radio]#button-5:checked ~ .arrows#arrow-4 {
+  left: -55px;
+  display: block;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* line 500, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+input[type=radio]#button-2:checked ~ .arrows#arrow-1 {
+  left: -19px;
+}
+
+/* line 502, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+input[type=radio]#button-3:checked ~ .arrows#arrow-2 {
+  left: -37px;
+}
+
+/* line 504, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+input[type=radio]#button-5:checked ~ .arrows#arrow-4 {
+  left: -73px;
+}
+
+/* line 506, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  font-family: 'Yanone Kaffeesatz';
+  z-index: 1000;
+}
+
+/* line 515, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description input {
+  visibility: hidden;
+}
+
+/* line 517, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description label {
+  font-family: 'WebSymbolsRegular';
+  background-color: black;
+  position: relative;
+  left: -17px;
+  top: 00px;
+  width: 180px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  padding-top: 7px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 5;
+  color: #141414;
+}
+
+/* line 539, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+#slideshow-inner > ul > li:hover .description label {
+  opacity: 1;
+}
+
+/* line 541, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description input[type=checkbox]:checked ~ label {
+  opacity: 1;
+}
+
+/* line 543, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description .description-text {
+  background-color: rgba(255, 255, 230, 0.5);
+  margin-top: 40px;
+  margin-left: 60px;
+  padding-left: 45px;
+  padding-top: 25px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  top: -35px;
+  z-index: 4;
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
+  color: #141414;
+}
+
+/* line 562, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/posts.css.scss */
+.description input[type=checkbox]:checked ~ .description-text {
+  opacity: 1;
+}
+/* line 1, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #FFF;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 24, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #4A7023;
+  text-decoration: none;
+}
+/* line 28, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+}
+
+/* line 34, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 39, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 43, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 49, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 56, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 66, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 5, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.square {
+  float: left;
+  width: 200px;
+  height: 200px;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 13, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.square2 {
+  float: left;
+  width: 350px;
+  height: 300px;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 21, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.square3 {
+  float: left;
+  width: 300px;
+  height: 360px;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 33, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.square img {
+  margin-left: 25px;
+}
+
+/* line 38, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.inside-square {
+  width: 175px;
+  height: 75px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  float: left;
+  clear: left;
+}
+
+/* line 47, /Users/Hunter/Desktop/Websites/Loudhiphop/app/assets/stylesheets/search.css.scss */
+.text-for-news {
+  width: 990px;
+  height: 990px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+

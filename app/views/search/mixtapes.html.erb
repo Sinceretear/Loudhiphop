@@ -1,17 +1,24 @@
+
 mixtapes.html.erb
 
 <div id="siteContainer">
 	<div class="alltheInfo">
-
-<!--
+						
 <p>add most views for last 30 days page off livemixtapes.</p>
 <p>Albums dont have artist names on datpiff links</p>
 <p> make sure to incorporate the "best song on this mixtape feature </p>"
 -->
 
+<% @new_array.each do |x, i, z| %>
+<div class="square3">
+	<a href="http://www.datpiff.com<%= x.attr('href') %>"><img src="<%= i.attr('src') %>"/></a><br />
+	<%= x.attr('title').to_s.gsub(/^(listen to )/, '') %><br />
+	<%= z.text %><br />
+</div>
+<% end %>
+
 <h1>MIXTAPES PAGE</h1>
 <p><a href="index">Home</a></p>
-
 <br />
 <br />
 
@@ -20,11 +27,14 @@ mixtapes.html.erb
 
 <br />
 <br />
+
+
+
 <br />
 <br />
 
 <% @lm_hash.each do |x, i| %>
-<div class="square">
+<div class="square3">
 <a href="http://www.livemixtapes.com<%= x.attr('href') %>"><img src="<%= i.attr('src') %>"/></a><br />
 <%= x.text %><br />
 </div>
@@ -34,15 +44,6 @@ mixtapes.html.erb
 <br />
 <br />
 <br />
-
-<% @dp_hash.each do |x, i| %>
-<div class="square">
-<a href="http://www.datpiff.com<%= x.attr('href') %>"><img src="<%= i.attr('src') %>"/></a><br />
-<%= x.text %><br />
-</div>
-<% end %>
-
-
 
 <br />
 <br />
