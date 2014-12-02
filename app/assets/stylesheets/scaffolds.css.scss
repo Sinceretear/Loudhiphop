@@ -1,10 +1,13 @@
+
 body {
-  background-color: #fff;
-  color: #FFF;
-  font-family: verdana, arial, helvetica, sans-serif;
+  background-color: #ebebeb;
+  color: black;
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
+
+h1 { color: black }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -22,7 +25,7 @@ a {
   color: #FFF;
   text-decoration: none;
   &:visited {
-    color: #4A7023;
+    color: black;
     text-decoration: none;
   }
   &:hover {

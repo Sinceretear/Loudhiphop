@@ -1,7 +1,92 @@
+
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.banner {
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.banner p {
+  font-family: "aktiv-grotesk-std";
+  color: white;
+  font-size: 56px;
+  top: 40%;
+  margin-left: 27%;
+  position: absolute;
+}
+
+
+
+#btn {
+  background: #FF542C;
+  background-image: -webkit-linear-gradient(top, #FF542C, #cf300c);
+  background-image: -moz-linear-gradient(top, #FF542C, #cf300c);
+  background-image: -ms-linear-gradient(top, #FF542C, #cf300c);
+  background-image: -o-linear-gradient(top, #FF542C, #cf300c);
+  background-image: linear-gradient(to bottom, #FF542C, #cf300c);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin: 0 auto;
+  width: 33%;
+  margin-top: 15px;
+}
+
+#btn:hover {
+  text-decoration: none;
+}
+
+.contact-box {
+  background: white;
+  width: 98%;
+  height: 150px;
+  float: right;
+  margin-top: 15px;
+  border-radius: 4px 4px 4px 4px;
+
+}
+
+.contact-box h4 {
+  color: black;
+  font-family: "aktiv-grotesk-std";
+  margin-left: 35%;
+}
+
+
+
+
+
+.reddit-box {
+  background: white;
+  width: 98%;
+  height: 150px;
+  float: right;
+  margin-top: 15px;
+  border-radius: 4px 4px 4px 4px;
+}
+
+.reddit-box h4 {
+  color: black;
+  font-family: "aktiv-grotesk-std";
+  margin-left: 20%;
+}
+
+
+
+.time span {
+  color: #999;
+  float: right;
+  font-size: 11px;
+}
 
 // begining of jquery plugin styles 
 div .ui-widget-content {
@@ -9,46 +94,74 @@ div .ui-widget-content {
   background: none;
 }
 
+#tabs2 li.ui-state-default.ui-corner-top {
+  background: #FF542C;
+}
+
+#tabs2 .ui-state-default a, .ui-state-default a:link{
+  color: white ;
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
+}
+
 #tabs2 .ui-widget-content {
-  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+  background-color: white;
 }
 
 #tabs2 .ui-widget-content p {
-  color: white;
+  color: black;
 }
 
 #tabs2 .ui-widget-content a {
-  color: white;
+  color: black;
 }
 
 #tabs2 .ui-widget-content h2 {
-  color: white;
+  color: black;
 }
 
 #tabs2 .ui-widget-content div {
-  color: white;
+  color: black;
+}
+
+#tabs2 .ui-widget-header {
+  border: none;
+  background: white;
 }
 
 // sidebar news and vids
 
+#tabs1 li.ui-state-default.ui-corner-top {
+  background: #FF542C;
+}
+
+#tabs1 .ui-state-default a, .ui-state-default a:link{
+  color: white ;
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
+}
+
+#tabs1 .ui-widget-header {
+  border: none;
+  background: white;
+}
+
 #tabs1 .ui-widget-content {
-  background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+  background-color: white;
 }
 
 #tabs1 .ui-widget-content p {
-  color: white;
+  color: black;
 }
 
 #tabs1 .ui-widget-content a {
-  color: white;
+  color: black;
 }
 
 #tabs1 .ui-widget-content h2 {
-  color: white;
+  color: black;
 }
 
 #tabs1 .ui-widget-content div {
-  color: white;
+  color: black;
 }
 
 // end of jquery plugin styles
@@ -103,7 +216,7 @@ width: 118px;
 #siteContainer{
 	width: 990px;
 	margin: 0 auto;
-  margin-top: 130px;
+  margin-top: 60px;
   height: 100%;
 }
 
@@ -132,7 +245,7 @@ width: 118px;
 }
 
 .alltheInfo{
-  margin-top: 80px;
+  margin-top: 0px;
   height: 100%;
 }
 
@@ -200,7 +313,7 @@ tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
 ::Header -----------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------- */
 #header {
-  background: #000;
+  background-image: url("http://i.imgur.com/grlRXlv.jpg");
   width: 100%;
   height: 55px;
   position: fixed;
@@ -216,6 +329,13 @@ tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
  
 
 #header .brand-logo {
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
+  line-height: 25px;
+  padding: 15px 20px 15px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-left: 15px;
   float: left; }
 
 #header nav {
@@ -233,6 +353,7 @@ tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
   display: inline-block; }
 
 #header nav li a {
+  font-family: "aktiv-grotesk-std", verdana, arial, helvetica, sans-serif;
   display: block;
   float: right;
   line-height: 25px;
@@ -245,9 +366,8 @@ tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
   color: #ffa200; }
 
 #header nav li a:before {
-  content: "/";
   display: inline-block;
-  padding-right: 10px;
+  padding-right: 30px;
   font-weight: 400;
   color: #949494; }
 
@@ -341,14 +461,7 @@ tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
     padding: 0;
 }
 
-body {
-    background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
-    background-repeat: repeat;
-    height: 500px;
-    padding: 1px;
-}
 
-h1 { color: white }
 
 #slideshow-wrap {
     display: block;
@@ -360,7 +473,6 @@ h1 { color: white }
     -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
     box-shadow: 0px 0px 5px rgba(0,0,0,.8);
-    margin-top: 20px;
     position: relative;
     float: left;
 }

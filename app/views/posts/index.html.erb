@@ -1,10 +1,10 @@
+<p>THIS IS LOUDHIPHOP.COM - CLICK THE SONG TO VIEW THE MUSIC VIDEO!</p>
+<p>Links to popular hiphop sites and some links and news/mixtapes/singles from each</p>
 <div id="siteContainer">
 
    <div class="alltheInfo">
 
-
-        <p>THIS IS LOUDHIPHOP.COM - CLICK THE SONG TO VIEW THE MUSIC VIDEO!</p>
-        <p>Links to popular hiphop sites and some links and news/mixtapes/singles from each</p>
+   <div class="banner"><img src="http://i.imgur.com/zNH347Y.jpg"><p>LOUDHIPHOP.COM</p></div>
         		<!-- THE FUCKING SLIDER CODE -->
 
             <div id="slideshow-wrap">
@@ -47,7 +47,7 @@
 
 
                         <li id="slide1">
-                            <img src="http://imgur.com/h8LR0Bi.jpg" />
+                            <img src="http://thumbs.hh.ulximg.com/public/article/600_1416930320_hood_billionaire_44.jpg" />
                             <div class="description">
                                 <input type="checkbox" id="show-description-1"/>
                                 <label for="show-description-1" class="show-description-label">CLICK ME I AM THE FUCKING INVISIBLE TEXT</label>
@@ -127,6 +127,7 @@
                                                   <a href="<%= x.link %>" target="_blank"><img src="<%= x.image %>"/></a>
                                                 <div class="sidebar-text">
                                                     <p><%= x.title %></p>
+                                                    <div class="time"><span><%= time_ago_in_words(x.created_at) + " ago" %></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,13 +137,13 @@
                             <div id="tabs-2">
 
                                  <h1><%= link_to "Video", search_videos_path %></h1><br />
-                                <a href="/search/videos">Videos</a><br />
                                     <% @videos.each do |x| %>
                                         <div class="sidebar-image-text-box">
                                             <div class="sidebar-images">  
                                                 <a href="<%= x.link %>" target="_blank"><img src="<%= x.image %>"/></a>
                                             <div class="sidebar-text">
                                                 <%= x.title %>
+                                                <div class="time"><span><%= time_ago_in_words(x.created_at) + " ago" %></span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -151,9 +152,30 @@
                                 
                             </div>
                         </div>
+
+
+                         <div class="reddit-box">
+                            <h4>Check out these SubReddits</h4>
+                            <div id="btn"><a href="http://www.reddit.com/r/trapmuzik/" target="_blank" >/r/trapmuzik</a></div>
+                            <div id="btn"><a href="http://www.reddit.com/r/hiphopheads/" target="_blank">/r/hiphopheads</a></div>
+                        </div>
+
+                        <div class="contact-box">
+                            <h4>Contact Us!</h4><br />
+
+                            <div id="btn"><a href="http://www.loudhiphop.com" target="_blank">Contact</a></div>
+
+                        </div>
+
+
+
+
                     </div>
 
 
+                    
+
+                    
                     <div class="posts-div">
                            <div id="tabs2">
                             <ul>
@@ -163,20 +185,8 @@
                                 <li><a href="#tabs-6">AudioCastle</a></li>
                                 <li><a href="#tabs-7">HipHopEarly</a></li>
                                 <li><a href="#tabs-8">HowFlyHipHop</a></li>
-                                <li><a href="#tabs-9">Reddit</a></li>
                             </ul>
                             <div id="tabs-3">
-                                <h2>These are the <%= link_to "AudioMack", 'http://www.audiomack.com/' %> links for today</h2><br />
-                                <p><%= link_to "Audiomack full page", search_audiomack_path, target: '_blank' %></p> <br />
-                                <h2>New Music Videos - Youtube Links</h2>
-                                <p>click the image for the original link</p>
-                                <p>click the link for the youtube and download links</p>
-
-
-                                <br />
-
-
-                                
                                     <% @posts.each do |post| %>
                                         <div class="youtube-div">
                                     
@@ -185,25 +195,19 @@
                                             </div>
                                             <div class="youtube-text">
                                                     <p><%= link_to post.artist, post, target: '_blank' %></p><br />
+                                                    <div class="time"><span><%= time_ago_in_words(post.created_at) + " ago" %></span></div>
                                             </div>
                                         </div>
                                     <% end %>
                                     <br />
                                     <br />
                                         <p><%= will_paginate @posts %></p>
+                                        <p><%= link_to "Audiomack full page", search_audiomack_path, target: '_blank' %></p>
+                                        <p><%= link_to "AudioMack", 'http://www.audiomack.com/' %></p>
                                     <br />
 
                             </div>
                             <div id="tabs-4">
-                                
-                                    <h2>These are the <%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %> links for today</h2><br />
-                                    <p><%= link_to "Hotnewhiphop full page", search_hotnewhiphop_path, target: '_blank' %></p> <br />
-                                    <h2>New Music Videos - Youtube Links</h2>
-                                    <p>click the image for the original link</p>
-                                    <p>click the link for the youtube and download links</p>
-
-                                    <br />
-                                    
                                         <% @Hnhh.each do |x| %>
                                             <div class="youtube-div">
                                             
@@ -211,21 +215,19 @@
                                                     <a href="<%= x.title %>" target="_blank"><img src = "<%= x.images %>">
                                                 </div>
                                                 <div class="youtube-text">
-                                                    <p><%= link_to x.artist, "hnhh/#{x.slug}", target: '_blank' %></p><br />      
+                                                    <p><%= link_to x.artist, "hnhh/#{x.slug}", target: '_blank' %></p><br />
+                                                    <div class="time"><span><%= time_ago_in_words(x.created_at) + " ago" %></span></div>      
                                                 </div>
                                             </div>
                                         <% end %>
                                         <br />
                                            <p><%= will_paginate @Hnhh %></p>
+                                           <p><%= link_to "Hotnewhiphop full page", search_hotnewhiphop_path, target: '_blank' %></p>
+                                           <p><%= link_to "HotNewHipHop", 'http://www.hotnewhiphop.com/' %></p>
                                         <br />
 
                             </div>
                             <div id="tabs-5">
-                                <h2>Coming Soon</h2><br />  
-                                <%= link_to(image_tag("http://i.imgur.com/RF3HOUC.jpg"), search_mixtapes_path) %>   
-                                <br />
-                                <br />
-
                                  <% @mixtape.each do |x| %>
                                     <div class="youtube-div">
                                         <div class="imageContainer">
@@ -234,9 +236,13 @@
                                          <div class="youtube-text">
                                             <p><%= x.artist %></p>
                                             <p><%= x.mx_name %></p>
+                                            <div class="time"><span><%= time_ago_in_words(x.created_at) + " ago" %></span></div>
                                         </div>
                                     </div>
                                 <% end %> 
+
+                                <p><%= will_paginate @mixtape %></p>
+                                <p><%= link_to "Mixtapes full page", search_mixtapes_path, target: '_blank' %></p>
 
                                
                             </div>
@@ -255,19 +261,19 @@
                                 <a href="/search/howflyhiphop"><img src="http://i.imgur.com/5n53gLF.jpg"/></a>
                             
                             </div>
-                            <div id="tabs-9">
-                                <h2>Coming Soon</h2><br /> 
-                                <a href="/search/reddit"><img src="http://i.imgur.com/ikmHJyB.jpg"/></a> 
-                            
-                            </div>
 
                     </div>
+
+
 
 
                 <!--
                 Make it link to a loud hip hop page that will scrape the download links from the top results. 
 
                 scrape upcoming projects and songs and display somewhere.
+
+                add earlyhiphop.com and hiphopdx news to loudhiphop.com
+
                 -->
 
                      

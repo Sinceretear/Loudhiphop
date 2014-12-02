@@ -42,7 +42,7 @@
 
 			<div class="container full-width-container">
 
-				<a class="brand-logo" href="/"><img src="http://www.i.imgur.com/50sILPi.png" alt="Audiomack Logo"/></a>
+				<div class="brand-logo"><a href="http://www.loudhiphop.com">LOUDHIPHOP</div>
 
 
 				<nav class="main-nav">
@@ -69,19 +69,6 @@
                     <input type="text" class="search" value="" placeholder="Search for artists, songs, albums!" name="q" />
 
                 </form><!--/#site-search-->
-
-
-
-			
-                    <nav id="login-menu">
-                            <ul>
-	                            <% if user_signed_in? %>
-	                                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-	                            <% else %>
-	                                <li class="signup"><%= link_to "Sign in", new_user_session_path %></li>
-	                            <% end %>
-                            </ul>
-                </nav><!--/#user-menu-->
 	
 
 			</div><!--/.full-width-container-->
