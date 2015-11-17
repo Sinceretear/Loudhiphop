@@ -33,22 +33,37 @@ class PostsController < ApplicationController
         # audio mack links -- connected to the trending...scrapes 2 pages here. 
         agent = Mechanize.new
         page1 = agent.get('http://www.audiomack.com/songs/day') 
-        @post_links = page1.search('h3.artist-title a')
-        @post_links.attr('href')
-        @audiomack_images = page1.search('.cover img')
-        @jam = Hash[@post_links.zip(@audiomack_images)]
+        
 
+        #scrapes all other data from audiomack top 10 songs/day
+        @post_links = page1.search('.player_image')
+
+        #scrapes the images from audiomack top 10
+        @audiomack_images = page1.search('.player_image img')
+ 
+        #the line below was experimentation. It zips the images array into the postlinks array. Might want to look into the .flatten mathod later
+        #@new_array = @audiomack_images.zip(@post_links)
+
+        #jam is the cominded array of postlinks and audiomack images
+        @jam = @audiomack_images.zip(@post_links)
+       
          @jam.each do |x, i|
-          artist_name_title = x.text
-          audiomack_link = "http://www.audiomack.com" + x.attr('href').to_s 
-          image_link =  i.attr('src').to_s 
+          artist_song_title = i.attr('data-title').to_s
+          artist_name_title = i.attr('data-artist').to_s
+          audiomack_link = "http://www.audiomack.com" + i.attr('data-url').to_s 
+          image_link =  x.attr('src').to_s # do not remove this regex .to_s[10..1000].gsub(/\".+/, '') 
 
+        #images are mapping to the wrong songs. also need ot fix the youtube plugin and the way we click from posts.
           if Post.exists?(:artist => artist_name_title)
             next
           else 
-            Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link, :original_site => "Audiomack")
-          end 
+            Post.create(:artist => artist_name_title, :title => artist_song_title, :Links => audiomack_link, :images => image_link, :original_site => "Audiomack")
+          end
+
         end 
+
+#should be able to get this working now as of Nov 13th
+=begin
 
         page13 = agent.get('http://www.audiomack.com/trending')
         @trending_links = page13.search('.artist-title a')
@@ -66,29 +81,40 @@ class PostsController < ApplicationController
             Post.create(:artist => artist_name_title, :images => image_link, :title => audiomack_link, :original_site => "Audiomack")
           end 
         end 
+=end 
 
-        # hnhh scrapes 
+
+  # hnhh scrapes 
+    
         page2 = agent.get('http://www.hotnewhiphop.com/archive/')
-        @hnhh_songs = page2.search('.list-item-title a')
-        @hnhh_songs.attr('href')
-        @hnhh_images = page2.search('.image38')
-        @hnhh_hash = Hash[@hnhh_songs.zip(@hnhh_images)]
+    
+        @hnhh_songs = page2.search('.songChart img')
+    
+        #@hnhh_songs.attr('href')
+    
+        @hnhh_links = page2.search('.songChart-cover-anchor')
+    
+        @hnhh_hash = @hnhh_links.zip(@hnhh_songs)
 
         @hnhh_hash.each do |x, i|
-          hnhh_link = x.attr('href').to_s
+          hnhh_link = "http://www.hotnewhiphop.com" + x.attr('href').to_s
           image_link = i.attr('src').to_s
-          artist_name_title = x.text
+          artist_name_title = x.attr('title').to_s
+          
 
         if HnhhDb.exists?(:artist => artist_name_title)
             next
           else 
             HnhhDb.create(:artist => artist_name_title, :images => image_link, :title => hnhh_link, :original_site => "HotNewHipHop")
           end 
-        end 
+ 
+      end
+
+=begin
 
         #code for the videos. this index method is getting bloated
         agent5 = Mechanize.new 
-      page5 = agent5.get('http://www.hiphopdx.com/index/videos/p.1')
+      page5 = agent5.get('http://www.hiphopdx.com/index/videos')
       @videos_hhdx = page5.search('h3 a')
 
       @hhdx_images = page5.search('#wirelist2 img')
@@ -100,25 +126,27 @@ class PostsController < ApplicationController
       @hnhh_video_links = page6.search('.list-item-title a')
       @hnhh_video_images = page6.search('.video-thumb .w100per')
       @hnhh_video_hash = Hash[@hnhh_video_links.zip(@hnhh_video_images)]
-
+=end 
 
       # code for the news 
 
       agent = Mechanize.new
       page = agent.get('http://www.hotnewhiphop.com/articles/news/')
-      @news_links = page.search('.title-10 a')
-      @news_links.shift
-      @images = page.search('.mr10 img')
+
+
+      @news_links = page.search('.bigStub-title-anchor')
+
+      
+      @news_images = page.search('.bigStub-leftBlock img')
 
       #zip and map the arrays to display
 
-      @pit = Hash[@news_links.zip(@images)]
-
+      @pit = @news_images.zip(@news_links)
 
       @pit.each do |x, i|
-            artical_name_title = i.attr('alt').to_s
-            news_link = x.attr('href').to_s
-            image_link =  i.attr('src').to_s
+            artical_name_title = i.attr('title').to_s
+            news_link = "http://www.hotnewhiphop.com" + i.attr('href').to_s
+            image_link =  x.attr('src').to_s
 
             if News.exists?(:title => artical_name_title)
               next
@@ -126,7 +154,8 @@ class PostsController < ApplicationController
               News.create(:title => artical_name_title, :image => image_link, :link => news_link)
             end 
           end
-
+     
+=begin
       #VIDEOS 
       agent5 = Mechanize.new 
       page5 = agent5.get('http://www.hiphopdx.com/index/videos/p.1')
@@ -145,18 +174,26 @@ class PostsController < ApplicationController
               Videos.create(:title => video_title, :image => image_link, :link => site_link)
             end 
           end
-
+=end
 
       agent6 = Mechanize.new 
       page6 = agent6.get('http://www.hotnewhiphop.com/videos/ ')
-      @hnhh_video_links = page6.search('.list-item-title a')
-      @hnhh_video_images = page6.search('.video-thumb .w100per')
-      @hnhh_video_hash = Hash[@hnhh_video_links.zip(@hnhh_video_images)]
+
+      @hnhh_video_links = page6.search('.gridItem-trackInfo-title-anchor')
+      
+      
+
+      @hnhh_video_images = page6.search('.gridItem-video img')
+      
+
+     
+      @hnhh_video_hash = @hnhh_video_images.zip(@hnhh_video_links)
+
 
       @hnhh_video_hash.each do |x, i|
-            video_title = x.text
-            site_link = x.attr('href')
-            image_link =  i.attr('src')
+            video_title = x.attr('alt')
+            site_link = "http://www.hotnewhiphop.com" + i.attr('href')
+            image_link =  x.attr('src')
 
             if Videos.exists?(:title => video_title)
               next
@@ -166,8 +203,8 @@ class PostsController < ApplicationController
           end
 
       #controller getting more bloated with the advent of the MIXTAPES DB
-
-          agent7 = Mechanize.new 
+=begin
+        agent7 = Mechanize.new 
         page7 = agent7.get('http://www.livemixtapes.com/main.php')
         @lm_links = page7.search('#content span a')
         @lm_images = page7.search('.mixtape_cover img')
@@ -208,19 +245,31 @@ class PostsController < ApplicationController
               end 
           end
 
+=end
+
   end
 
   def show #retrive and display individual post	
   	@posts = Post.friendly.find(params[:id])
 
     barn = params[:id]
-    @example = Post.friendly.find(barn).artist 
+    @example = Post.friendly.find(barn).artist + " " +Post.friendly.find(barn).title
 
-    require 'youtube_search'
-    @search_results = YoutubeSearch.search( @example,'order_by' => 'viewcount').first['video_id']
-
+    #require 'youtube_search'
+    #this API no longer works due to youtube moving to new API version v3
     
+    #use this gem https://github.com/Fullscreen/yt
+    # https://github.com/Fullscreen/yt#configuring-your-app
+    require 'yt'
 
+    #this interacts with the youtube API v3
+    Yt.configure do |config|
+      config.api_key = 'AIzaSyBU6ZeJtu_uw0HSLd0XklyiJHVj6B9c5wI'
+    end
+
+    #this is in documentation of the yt gem. # this gem sucks and hardly ever grabs the first video
+    videos = Yt::Collections::Videos.new
+    @spacejam = videos.where( q: @example, safe_search: 'none').first.id
     
     require 'mechanize'
         require 'nokogiri'

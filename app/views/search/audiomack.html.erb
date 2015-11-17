@@ -1,6 +1,7 @@
 
 
 
+
 <div id="siteContainer">
 	<div class="alltheInfo">
 
@@ -12,25 +13,17 @@
 		-->
 	<% @jam.each do |x, i| %>
 	<div class="square3">
-	<a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a><br />
-	<%= x.text %><br />
-	<% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
+	<a href="http://www.audiomack.com<%= i.attr('data-url').to_s %>"><img src="<%= x.attr('src').to_s %>"/></a><br />
+	<%= i.attr('data-artist').to_s %><br />
+	<%= i.attr('data-title').to_s %><br />
+	<% link = 'http://www.google.com/search?q=' + i.attr('data-artist').to_s.delete("&").gsub(/\s+/, "+") + i.attr('data-title').to_s.delete("&").gsub(/\s+/, "+") +'+download' %>
 		<a href=<%= link %> target="_blank">Download</a>
-	<% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %><br />
+	<% link1 = 'https://www.youtube.com/results?search_query=' + i.attr('data-artist').to_s.delete("&").gsub(/\s+/, "+") + i.attr('data-title').to_s.delete("&").gsub(/\s+/, "+") %><br />
 		<a href=<%= link1 %> target="_blank">Youtube</a><br />
 	</div>
 	<% end %>
 			
-	<% @trending_hash.each do |x, i| %>
-	<div class="square3">
-	<a href="http://www.audiomack.com<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>"/></a><br />
-	<%= x.text %><br />
-	<% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
-		<a href=<%= link %> target="_blank">Download</a>
-	<% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %><br />
-		<a href=<%= link1 %> target="_blank">Youtube</a><br />
-	</div>
-	<% end %>
+
 
 	</div>
 </div>

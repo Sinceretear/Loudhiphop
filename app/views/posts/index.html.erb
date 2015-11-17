@@ -47,7 +47,7 @@
 
 
                         <li id="slide1">
-                            <img src="http://thumbs.hh.ulximg.com/public/article/600_1416930320_hood_billionaire_44.jpg" />
+                            <img src="http://imgur.com/h8LR0Bi.jpg" />
                             <div class="description">
                                 <input type="checkbox" id="show-description-1"/>
                                 <label for="show-description-1" class="show-description-label">CLICK ME I AM THE FUCKING INVISIBLE TEXT</label>
@@ -106,6 +106,8 @@
             </div>
 
          <!-- THE FUCKING SLIDER CODE -->  
+
+         <!-- take a look at jamstun.com and dighiphop.com and see if want to integrate it -->
 
             <% if user_signed_in? %>
                 <p> Welcome <%= current_user.email %> </p>
@@ -174,7 +176,7 @@
 
 
                     
-
+<!--- THE START OF THE TABS FUNCTIONALITY -->
                     
                     <div class="posts-div">
                            <div id="tabs2">
@@ -191,10 +193,12 @@
                                         <div class="youtube-div">
                                     
                                             <div class="imageContainer">
-                                                <a href="<%= post.title %>" target="_blank"><img src = "<%= post.images %>"></a>
+                                                <a href="<%= post.Links %>" target="_blank"><img src = "<%= post.images %>"></a>
                                             </div>
                                             <div class="youtube-text">
-                                                    <p><%= link_to post.artist, post, target: '_blank' %></p><br />
+                                                    <p><%= link_to post.artist, post, target: '_blank' %></p>
+                                                    <p><%= link_to post.title, post, target: '_blank' %></p>
+                                                
                                                     <div class="time"><span><%= time_ago_in_words(post.created_at) + " ago" %></span></div>
                                             </div>
                                         </div>
@@ -228,23 +232,9 @@
 
                             </div>
                             <div id="tabs-5">
-                                 <% @mixtape.each do |x| %>
-                                    <div class="youtube-div">
-                                        <div class="imageContainer">
-                                            <a href="<%= x.mx_artist %>" target="_blank"><img src = "<%= x.mx_cover %>"></a>
-                                        </div>
-                                         <div class="youtube-text">
-                                            <p><%= x.artist %></p>
-                                            <p><%= x.mx_name %></p>
-                                            <div class="time"><span><%= time_ago_in_words(x.created_at) + " ago" %></span></div>
-                                        </div>
-                                    </div>
-                                <% end %> 
-
-                                <p><%= will_paginate @mixtape %></p>
-                                <p><%= link_to "Mixtapes full page", search_mixtapes_path, target: '_blank' %></p>
-
-                               
+                                <h2>Coming Soon</h2><br /> 
+                                <a href="/search/mixtapes"><img src="http://i.imgur.com/RF3HOUC.jpg"/></a>
+                           
                             </div>
                             <div id="tabs-6">
                                 <h2>Coming Soon</h2><br /> 
@@ -276,12 +266,10 @@
 
                 -->
 
-                     
-                            
-
-
     </div>
 </div>
+
+
 
 
 <script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121184609) do
+ActiveRecord::Schema.define(version: 20151102035312) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20141121184609) do
     t.text     "images"
     t.string   "slug"
     t.string   "original_site"
+    t.string   "Links"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug"

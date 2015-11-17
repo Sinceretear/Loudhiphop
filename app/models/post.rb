@@ -10,6 +10,7 @@
 #  images        :text
 #  slug          :string(255)
 #  original_site :string(255)
+#  Links         :string(255)
 #
 
 class Post < ActiveRecord::Base
@@ -20,11 +21,5 @@ class Post < ActiveRecord::Base
 	extend FriendlyId
 		friendly_id :artist, use: :slugged
 
-
-	def self.import(file)
-		CSV.foreach(file.path, headers: true) do |row|
-			Post.create! row.to_hash
-		end		
-	end 
 
 end

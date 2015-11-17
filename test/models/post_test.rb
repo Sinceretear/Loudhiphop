@@ -10,6 +10,7 @@
 #  images        :text
 #  slug          :string(255)
 #  original_site :string(255)
+#  Links         :string(255)
 #
 
 require 'test_helper'

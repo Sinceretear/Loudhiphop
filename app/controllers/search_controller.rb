@@ -58,13 +58,25 @@ class SearchController < ApplicationController
     requires
 
     agent2 = Mechanize.new 
+
+
     page2 = agent2.get('http://www.hotnewhiphop.com/archive/')
-    @hnhh_songs = page2.search('.list-item-title a')
-    @hnhh_songs.attr('href')
 
-    @hnhh_images = page2.search('.image38')
 
-    @hnhh_hash = Hash[@hnhh_songs.zip(@hnhh_images)]
+    @hnhh_songs = page2.search('.songChart img')
+    
+        #@hnhh_songs.attr('href')
+    
+        @hnhh_links = page2.search('.songChart-cover-anchor')
+    
+        @hnhh_hash = @hnhh_links.zip(@hnhh_songs)
+
+        @hnhh_hash.each do |x, i|
+          hnhh_link = "http://www.hotnewhiphop.com" + x.attr('href').to_s
+          image_link = i.attr('src').to_s
+          artist_name_title = x.attr('title').to_s
+
+        end 
 
     
   end 
@@ -74,17 +86,27 @@ class SearchController < ApplicationController
 
     agent = Mechanize.new
     page = agent.get('http://www.audiomack.com/songs/day') 
-    @post_links = page.search('h3.artist-title a')
-    @post_links.attr('href')
-    @audiomack_images = page.search('.cover img')
-    @jam = Hash[@post_links.zip(@audiomack_images)]
+    #scrapes all other data from audiomack top 10 songs/day
+        @post_links = page.search('.player_image')
 
+        #scrapes the images from audiomack top 10
+        @audiomack_images = page.search('.player_image img')
+ 
+        #the line below was experimentation. It zips the images array into the postlinks array. Might want to look into the .flatten mathod later
+        #@new_array = @audiomack_images.zip(@post_links)
+
+        #jam is the cominded array of postlinks and audiomack images
+        @jam = @audiomack_images.zip(@post_links)
+
+
+
+
+=begin
     page13 = agent.get('http://www.audiomack.com/trending')
     @trending_links = page13.search('.artist-title a')
     @trending_images = page13.search('.cover img')
     @trending_hash = Hash[@trending_links.zip(@trending_images)]
-
-
+=end
 =begin
     #Take our search array, insert it into a query
     search_terms.each do |search|

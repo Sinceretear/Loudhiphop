@@ -13,9 +13,21 @@ def show
     barn = params[:id]
     @example = HnhhDb.friendly.find(barn).artist 
 
-    require 'youtube_search'
-    @search_results = YoutubeSearch.search( @example,'order_by' => 'viewcount').first['video_id']
+    #require 'youtube_search'
+    #this API no longer works due to youtube moving to new API version v3
+    
+    #use this gem https://github.com/Fullscreen/yt
+    # https://github.com/Fullscreen/yt#configuring-your-app
+    require 'yt'
 
+    #this interacts with the youtube API v3
+    Yt.configure do |config|
+      config.api_key = 'AIzaSyBU6ZeJtu_uw0HSLd0XklyiJHVj6B9c5wI'
+    end
+
+    #this is in documentation of the yt gem. 
+    videos = Yt::Collections::Videos.new
+    @spacejam = videos.where( q: @Hnhh.artist, safe_search: 'none').first.id
     
 
     

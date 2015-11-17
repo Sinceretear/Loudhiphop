@@ -11,12 +11,12 @@
 
 		<% @hnhh_hash.each do |x, i| %>
 		<div class="square">
-		<a href="<%= x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>" style=""/></a><br />
-		<%= x.text %><br />
-		<% link = 'http://www.google.com/search?q=' + x.text.delete("&").gsub(/\s+/, "+") + '+download' %>
-         <a href=<%= link %> target="_blank">Download</a><br />
-         <% link1 = 'https://www.youtube.com/results?search_query=' + x.text.delete("&").gsub(/\s+/, "+") %>
-         <a href=<%= link1 %> target="_blank">Youtube</a><br />
+		<a href="<%= "http://www.hotnewhiphop.com" + x.attr('href').to_s %>"><img src="<%= i.attr('src').to_s %>" style=""/></a><br />
+		<%= x.attr('title').to_s %><br />
+		<% link = 'http://www.google.com/search?q=' + x.attr('title').to_s.delete("&").gsub(/\s+/, "+") +'+download' %>
+		<a href=<%= link %> target="_blank">Download</a>
+	<% link1 = 'https://www.youtube.com/results?search_query=' + i.attr('title').to_s.delete("&").gsub(/\s+/, "+") %><br />
+		<a href=<%= link1 %> target="_blank">Youtube</a><br />
 		</div>
 		<% end %>
 		
